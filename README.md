@@ -57,9 +57,6 @@ This allows developers to create and manage WordPress websites locally without e
 
 - Automatic `wp-config.php` generation
 
-- Portable architecture  
-  *(works directly from USB drive)*
-
 ---
 
 # System Requirements
