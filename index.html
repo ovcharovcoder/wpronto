@@ -1,0 +1,1301 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WPronto — Local WordPress Development for Windows</title>
+    <meta
+      name="description"
+      content="WPronto — lightweight local WordPress server for Windows. Launch WP sites with one click, create backups, get phpMyAdmin and WP-CLI included."
+    />
+    <meta
+      name="keywords"
+      content="WPronto, local WordPress server, WordPress locally, local WordPress server, XAMPP alternative, OpenServer alternative, WordPress development environment, localhost WordPress, free WordPress server"
+    />
+    <!-- Preconnect for faster external resources loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div class="blob"></div>
+    <div class="blob"></div>
+
+    <nav>
+      <div class="container nav-content">
+        <a href="https://ovcharovcoder.github.io/WPronto" class="logo">
+          <img src="img/logo.webp" alt="WPronto brand logo" />
+        </a>
+        <div class="nav-actions">
+          <a
+            href="https://www.dropbox.com/scl/fi/ssn922c9rnwcn41fpc3d1/WPronto_install.zip?rlkey=r1j159hu2gvcqcninp1syzvnr&st=oydh8k3i&dl=1"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="nav-download-btn"
+          >
+            <i class="fas fa-download"></i>
+            <span data-en="Download" data-uk="Завантажити">Download</span>
+          </a>
+          <button class="lang-btn" id="langToggle">
+            <i class="fas fa-language"></i>
+            <span data-en="Українська" data-uk="English">Українська</span>
+          </button>
+          <button class="theme-btn" id="themeToggle">
+            <i class="fas fa-moon"></i>
+            <span data-en="Dark mode" data-uk="Темна тема">Dark mode</span>
+          </button>
+          <!-- Нова кнопка підтримки з сердечком -->
+          <button class="support-nav-btn" id="supportNavBtn">
+            <i class="fas fa-heart"></i>
+            <span data-en="Support" data-uk="Підтримати">Support</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <!-- HERO SECTION -->
+      <section class="hero">
+        <div
+          class="badge"
+          data-en="Minimum Setup • For WordPress on Windows • Clear Interface"
+          data-uk="Мінімум налаштувань • Для WordPress на Windows • Зрозумілий інтерфейс"
+        >
+          Minimum Setup • For WordPress on Windows • Clear Interface
+        </div>
+        <h1
+          data-en="Launch local WordPress projects in minutes."
+          data-uk="Запускайте локальні WordPress проєкти за лічені хвилини."
+        >
+          Launch local WordPress projects in minutes.
+        </h1>
+        <p
+          data-en="WPronto is a fast and lightweight WordPress development environment for Windows — without unnecessary setup or bloated control panels."
+          data-uk="WPronto — швидке та легке середовище для розробки WordPress на Windows без зайвих налаштувань і громіздких панелей."
+        >
+          WPronto gives you a fast, lightweight and fully configured WordPress
+          development environment for Windows — without bloated control panels,
+          complicated setup or endless configuration.
+        </p>
+        <div class="cta-group">
+          <a
+            href="https://www.dropbox.com/scl/fi/ssn922c9rnwcn41fpc3d1/WPronto_install.zip?rlkey=r1j159hu2gvcqcninp1syzvnr&st=oydh8k3i&dl=1"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+          >
+            <i class="fas fa-download"></i>
+            <span data-en="Download" data-uk="Завантажити">Download</span>
+          </a>
+          <a
+            href="https://github.com/ovcharovcoder/WPronto-src"
+            target="_blank"
+            class="btn btn-secondary"
+          >
+            <i class="fab fa-github"></i>
+            GitHub
+          </a>
+        </div>
+      </section>
+
+      <section class="mini-info">
+        <div class="mini-info-grid">
+          <div>
+            <i class="fas fa-bolt"></i>
+            <span
+              data-en="One-click local server"
+              data-uk="Локальний сервер в один клік"
+              >One-click local server</span
+            >
+          </div>
+          <div>
+            <i class="fab fa-wordpress"></i>
+            <span
+              data-en="WordPress-focused workflow"
+              data-uk="Орієнтація на WordPress"
+              >WordPress-focused workflow</span
+            >
+          </div>
+          <div>
+            <i class="fas fa-database"></i>
+            <span
+              data-en="Includes phpMyAdmin & WP-CLI"
+              data-uk="Включає phpMyAdmin та WP-CLI"
+              >Includes phpMyAdmin & WP-CLI</span
+            >
+          </div>
+          <div>
+            <i class="fas fa-rocket"></i>
+            <span data-en="Lightweight and fast" data-uk="Легкий та швидкий"
+              >Lightweight and fast</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- SYSTEM REQUIREMENTS -->
+      <section class="system-reqs">
+        <h2
+          class="section-title"
+          data-en="System requirements"
+          data-uk="Системні вимоги"
+        >
+          System requirements
+        </h2>
+        <div class="requirements-grid">
+          <div class="req-card">
+            <i class="fab fa-windows"></i>
+            <h3
+              data-en="Windows 10 / 11 (64-bit)"
+              data-uk="Windows 10 / 11 (64-bit)"
+            >
+              Windows 10 / 11 (64-bit)
+            </h3>
+          </div>
+          <div class="req-card">
+            <i class="fas fa-microchip"></i>
+            <h3
+              data-en="8GB RAM (16GB recommended)"
+              data-uk="8 ГБ ОЗП (рекомендовано 16 ГБ)"
+            >
+              8GB RAM (16GB recommended)
+            </h3>
+          </div>
+          <div class="req-card">
+            <i class="fas fa-hdd"></i>
+            <h3
+              data-en="700MB free space + projects"
+              data-uk="700 МБ вільного місця + проєкти"
+            >
+              700MB free space + projects
+            </h3>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHAT'S INSIDE (TECH STACK) -->
+      <section class="tech-stack">
+        <h2
+          class="section-title"
+          data-en="What's inside"
+          data-uk="Що всередині"
+        >
+          What's inside
+        </h2>
+        <div class="tech-badges">
+          <span><i class="fas fa-server"></i> Nginx 1.22</span>
+          <span><i class="fab fa-php"></i> PHP 8.5</span>
+          <span><i class="fas fa-database"></i> MariaDB 10.11</span>
+          <span><i class="fab fa-wordpress"></i> WordPress 7.0</span>
+          <span><i class="fas fa-database"></i> phpMyAdmin 5.2</span>
+        </div>
+        <div
+          class="tech-description"
+          data-en="All software is pre-configured and ready to use right after installation."
+          data-uk="Все програмне забезпечення попередньо налаштоване та готове до використання одразу після встановлення."
+        >
+          All software is pre-configured and ready to use right after
+          installation.
+        </div>
+      </section>
+
+      <!-- FEATURES -->
+      <section>
+        <h2
+          class="section-title"
+          data-en="Made for WordPress developers"
+          data-uk="Створено для WordPress розробників"
+        >
+          Made for WordPress developers
+        </h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <i class="fas fa-server"></i>
+            <h3
+              data-en="Start everything instantly"
+              data-uk="Запускайте все миттєво"
+            >
+              Start everything instantly
+            </h3>
+            <p
+              data-en="Launch Nginx, PHP and MariaDB with one click. No terminal commands, no confusing setup, no wasted time."
+              data-uk="Запускайте Nginx, PHP та MariaDB одним кліком. Жодних команд у терміналі, жодного складного налаштування, жодних витрачених хвилин."
+            >
+              Launch Nginx, PHP and MariaDB with one click. No terminal
+              commands, no confusing setup, no wasted time.
+            </p>
+          </div>
+          <div class="feature-card">
+            <i class="fab fa-wordpress"></i>
+            <h3
+              data-en="Create WordPress sites automatically"
+              data-uk="Автоматичне створення сайтів WordPress"
+            >
+              Create WordPress sites automatically
+            </h3>
+            <p
+              data-en="WPronto configures databases, local domains and WordPress files for you — so you can focus on development instead of server setup."
+              data-uk="WPronto налаштовує бази даних, локальні домени та файли WordPress за вас — щоб ви зосередилися на розробці, а не на налаштуванні сервера."
+            >
+              WPronto configures databases, local domains and WordPress files
+              for you — so you can focus on development instead of server setup.
+            </p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-box"></i>
+            <h3 data-en="Clean local domains" data-uk="Чисті локальні домени">
+              Clean local domains
+            </h3>
+            <p
+              data-en="Every project gets its own readable local domain like <code>myproject.wp</code> automatically."
+              data-uk="Кожен проєкт отримує свій зрозумілий локальний домен, наприклад <code>myproject.wp</code>, автоматично."
+            >
+              Every project gets its own readable local domain like
+              <code>myproject.wp</code> automatically.
+            </p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-database"></i>
+            <h3
+              data-en="Built-in phpMyAdmin & WP-CLI"
+              data-uk="Вбудовані phpMyAdmin та WP-CLI"
+            >
+              Built-in phpMyAdmin & WP-CLI
+            </h3>
+            <p
+              data-en="Manage databases with phpMyAdmin or control WordPress via command line using WP-CLI."
+              data-uk="Керуйте базами даних через phpMyAdmin або керуйте WordPress через командний рядок за допомогою WP-CLI."
+            >
+              Manage databases with phpMyAdmin or control WordPress via command
+              line using WP-CLI.
+            </p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-trash-alt"></i>
+            <h3
+              data-en="One-click project removal"
+              data-uk="Видалення проєкту одним кліком"
+            >
+              One-click project removal
+            </h3>
+            <p
+              data-en="Delete unused projects instantly — no manual folder hunting or config cleanup required."
+              data-uk="Видаляйте непотрібні проєкти миттєво — не потрібно вручну шукати папки або чистити конфігурації."
+            >
+              Delete unused projects instantly — no manual folder hunting or
+              config cleanup required.
+            </p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-shield-alt"></i>
+            <h3
+              data-en="Secure credential storage"
+              data-uk="Безпечне зберігання облікових даних"
+            >
+              Secure credential storage
+            </h3>
+            <p
+              data-en="Master password protected vault stores all your WordPress admin credentials securely."
+              data-uk="Сховище, захищене головним паролем, зберігає всі ваші облікові дані WordPress у безпеці."
+            >
+              Master password protected vault stores all your WordPress admin
+              credentials securely.
+            </p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-keyboard"></i>
+            <h3 data-en="Hotkeys Support" data-uk="Підтримка гарячих клавіш">
+              Hotkeys Support
+            </h3>
+            <p
+              data-en="Control the server without touching the mouse: <strong>Ctrl+S</strong> to start, <strong>Ctrl+X</strong> to stop. Your workflow just got faster."
+              data-uk="Керуйте сервером без миші: <strong>Ctrl+S</strong> для запуску, <strong>Ctrl+X</strong> для зупинки. Ваш робочий процес став швидшим."
+            >
+              Control the server without touching the mouse:
+              <strong>Ctrl+S</strong> to start, <strong>Ctrl+X</strong> to stop.
+              Your workflow just got faster.
+            </p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-database"></i>
+            <h3
+              data-en="Full Site Backup"
+              data-uk="Повне резервне копіювання сайту"
+            >
+              Full Site Backup
+            </h3>
+            <p
+              data-en="One-click backup creates a complete copy of your site files AND database. All backups are stored in organized folders by site and date."
+              data-uk="Резервне копіювання в один клік створює повну копію файлів сайту ТА бази даних. Усі бекапи зберігаються в організованих папках за сайтами та датами."
+            >
+              One-click backup creates a complete copy of your site files AND
+              database. All backups are stored in organized folders by site and
+              date.
+            </p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-chart-line"></i>
+            <h3 data-en="Enhanced Monitoring" data-uk="Розширений моніторинг">
+              Enhanced Monitoring
+            </h3>
+            <p
+              data-en="New status bar shows real-time server state. Detailed operation logs with file output for easy debugging."
+              data-uk="Новий рядок стану показує стан сервера в реальному часі. Детальні журнали операцій із виведенням у файли для легкого налагодження."
+            >
+              New status bar shows real-time server state. Detailed operation
+              logs with file output for easy debugging.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOW IT WORKS -->
+      <section>
+        <h2
+          class="section-title"
+          data-en="Get started in minutes"
+          data-uk="Почніть за лічені хвилини"
+        >
+          Get started in minutes
+        </h2>
+        <div class="steps">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3 data-en="Install WPronto" data-uk="Встановіть WPronto">
+              Install WPronto
+            </h3>
+            <p
+              data-en="Download and install WPronto on your Windows computer in just a few clicks."
+              data-uk="Завантажте та встановіть WPronto на ваш комп'ютер з Windows за кілька кліків."
+            >
+              Download and install WPronto on your Windows computer in just a
+              few clicks.
+            </p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3 data-en="Create a new project" data-uk="Створіть новий проєкт">
+              Create a new project
+            </h3>
+            <p
+              data-en="Enter your project name and let WPronto automatically configure the entire WordPress environment for you."
+              data-uk="Введіть назву проєкту, і WPronto автоматично налаштує для вас усе середовище WordPress."
+            >
+              Enter your project name and let WPronto automatically configure
+              the entire WordPress environment for you.
+            </p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3
+              data-en="Start building immediately"
+              data-uk="Почніть розробку одразу"
+            >
+              Start building immediately
+            </h3>
+            <p
+              data-en="Open your local WordPress site, log into the admin dashboard and continue developing normally."
+              data-uk="Відкрийте ваш локальний сайт WordPress, увійдіть в адмін-панель та продовжуйте розробку у звичайному режимі."
+            >
+              Open your local WordPress site, log into the admin dashboard and
+              continue developing normally.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- STEP-BY-STEP (ENLARGED IMAGES) -->
+      <section>
+        <h2
+          class="section-title"
+          data-en="Step-by-step guide"
+          data-uk="Покрокова інструкція"
+        >
+          Step-by-step guide
+        </h2>
+        <div class="steps-detailed">
+          <!-- STEP 1: START SERVER -->
+          <div class="step-detailed-item">
+            <div class="step-image-wrapper">
+              <img
+                class="steps_img_large"
+                src="img/step1.webp"
+                alt="Starting server"
+                loading="lazy"
+              />
+            </div>
+            <div class="step-text-content">
+              <h2
+                data-en="Step 1 — Start the local server"
+                data-uk="Крок 1 — Запустіть локальний сервер"
+              >
+                Step 1 — Start the local server
+              </h2>
+              <p
+                data-en='Press <strong>"Start"</strong> (or <strong>Ctrl+S</strong>) and WPronto will automatically launch Nginx, PHP and MariaDB. Your local development environment becomes ready in seconds. The server status will change from red (<span style="color: #dc2626;">Stopped</span>) to green (<span style="color: #10b981;">Running</span>).'
+                data-uk='Натисніть <strong>"Start"</strong> (або <strong>Ctrl+S</strong>), і WPronto автоматично запустить Nginx, PHP та MariaDB. Ваше локальне середовище розробки буде готове за секунди. Статус сервера зміниться з червоного (<span style="color: #dc2626;">Зупинено</span>) на зелений (<span style="color: #10b981;">Працює</span>).'
+              >
+                Press <strong>"Start"</strong> (or <strong>Ctrl+S</strong>) and
+                WPronto will automatically launch Nginx, PHP and MariaDB. Your
+                local development environment becomes ready in seconds. The
+                server status will change from red (Stopped) to green (Running).
+              </p>
+            </div>
+          </div>
+
+          <!-- STEP 2: CREATE SITE -->
+          <div class="step-detailed-item">
+            <div class="step-image-wrapper">
+              <img
+                class="steps_img_large"
+                src="img/step2.webp"
+                alt="Create site"
+                loading="lazy"
+              />
+            </div>
+            <div class="step-text-content">
+              <h2
+                data-en="Step 2 — Create a new site"
+                data-uk="Крок 2 — Створіть новий сайт"
+              >
+                Step 2 — Create a new site
+              </h2>
+              <p
+                data-en='Press <strong>"Create Site"</strong> to begin a new WordPress project. Enter a project name (use underscores for multi-word names, like <code>best_store</code>). WPronto will automatically create the database and configure the local domain.'
+                data-uk='Натисніть <strong>"Create Site"</strong>, щоб розпочати новий WordPress проєкт. Введіть назву проєкту (для назв із кількох слів використовуйте нижнє підкреслення, наприклад <code>best_store</code>). WPronto автоматично створить базу даних і налаштує локальний домен.'
+              >
+                Press <strong>"Create Site"</strong> to begin a new WordPress
+                project. Enter a project name (use underscores for multi-word
+                names, like <code>best_store</code>). WPronto will automatically
+                create the database and configure the local domain.
+              </p>
+            </div>
+          </div>
+
+          <!-- STEP 3: INSTALL WORDPRESS -->
+          <div class="step-detailed-item">
+            <div class="step-image-wrapper">
+              <img
+                class="steps_img_large"
+                src="img/step3.webp"
+                alt="WordPress installation"
+                loading="lazy"
+              />
+            </div>
+            <div class="step-text-content">
+              <h2
+                data-en="Step 3 — Install WordPress"
+                data-uk="Крок 3 — Встановіть WordPress"
+              >
+                Step 3 — Install WordPress
+              </h2>
+              <p
+                data-en='After site creation, click <strong>"Open Admin"</strong> or open <code>http://your-site.wp/wp-admin/install.php</code> in your browser. Follow the WordPress installation wizard — choose your language, enter site title, username, password, and email.'
+                data-uk='Після створення сайту натисніть <strong>"Open Admin"</strong> або відкрийте <code>http://your-site.wp/wp-admin/install.php</code> у браузері. Дотримуйтесь інструкцій майстра встановлення WordPress — оберіть мову, введіть назву сайту, ім"я користувача, пароль та електронну пошту.'
+              >
+                After site creation, click <strong>"Open Admin"</strong> or open
+                <code>http://your-site.wp/wp-admin/install.php</code> in your
+                browser. Follow the WordPress installation wizard — choose your
+                language, enter site title, username, password, and email.
+              </p>
+            </div>
+          </div>
+
+          <!-- STEP 4: OPEN ADMIN DASHBOARD -->
+          <div class="step-detailed-item">
+            <div class="step-image-wrapper">
+              <img
+                class="steps_img_large"
+                src="img/step4.webp"
+                alt="Open admin dashboard"
+                loading="lazy"
+              />
+            </div>
+            <div class="step-text-content">
+              <h2
+                data-en="Step 4 — Open the admin dashboard"
+                data-uk="Крок 4 — Відкрийте адмін-панель"
+              >
+                Step 4 — Open the admin dashboard
+              </h2>
+              <p
+                data-en='After installation, press <strong>"Open Admin"</strong> to instantly access your WordPress dashboard and start developing.'
+                data-uk='Після встановлення натисніть <strong>"Open Admin"</strong>, щоб миттєво отримати доступ до вашої панелі керування WordPress і почати розробку.'
+              >
+                After installation, press <strong>"Open Admin"</strong> to
+                instantly access your WordPress dashboard and start developing.
+              </p>
+            </div>
+          </div>
+
+          <!-- STEP 5: MANAGE DATABASE -->
+          <div class="step-detailed-item">
+            <div class="step-image-wrapper">
+              <img
+                class="steps_img_large"
+                src="img/step5.webp"
+                alt="Manage database"
+                loading="lazy"
+              />
+            </div>
+            <div class="step-text-content">
+              <h2
+                data-en="Step 5 — Manage your database"
+                data-uk="Крок 5 — Керуйте вашою базою даних"
+              >
+                Step 5 — Manage your database
+              </h2>
+              <p
+                data-en="Open <strong>phpMyAdmin</strong> anytime to browse tables, run SQL queries or debug your project."
+                data-uk="Відкрийте <strong>phpMyAdmin</strong> будь-коли, щоб переглянути таблиці, виконати SQL-запити або налаштувати ваш проєкт."
+              >
+                Open <strong>phpMyAdmin</strong> anytime to browse tables, run
+                SQL queries or debug your project.
+              </p>
+              <br />
+              <p>
+                <strong
+                  data-en="Default database credentials:"
+                  data-uk="Типові облікові дані бази даних:"
+                  >Default database credentials:</strong
+                ><br />
+                Username: <code>root</code><br />
+                Password: <code>(empty)</code>
+              </p>
+            </div>
+          </div>
+
+          <!-- STEP 6: BACKUP SITE -->
+          <div class="step-detailed-item">
+            <div class="step-image-wrapper">
+              <img
+                class="steps_img_large"
+                src="img/step6.webp"
+                alt="Backup site"
+                loading="lazy"
+              />
+            </div>
+            <div class="step-text-content">
+              <h2
+                data-en="Step 6 — Create a backup"
+                data-uk="Крок 6 — Створіть резервну копію"
+              >
+                Step 6 — Create a backup
+              </h2>
+              <p
+                data-en='Select a site and click <strong>"Backup Site"</strong> to create a full backup (files + database). Backups are saved to: <code>WPronto/backups/your-site/YYYY-MM-DD_HH-MM-SS/</code>'
+                data-uk='Виберіть сайт і натисніть <strong>"Backup Site"</strong>, щоб створити повну резервну копію (файли + база даних). Бекапи зберігаються в: <code>WPronto/backups/your-site/YYYY-MM-DD_HH-MM-SS/</code>'
+              >
+                Select a site and click <strong>"Backup Site"</strong> to create
+                a full backup (files + database). Backups are saved to:
+                <code>WPronto/backups/your-site/YYYY-MM-DD_HH-MM-SS/</code>
+              </p>
+              <br />
+              <h3
+                data-en="How to restore a backup:"
+                data-uk="Як відновити бекап:"
+              >
+                How to restore a backup:
+              </h3>
+              <ol style="margin-left: 24px">
+                <li
+                  data-en="Create a new site with the <strong>EXACT same name</strong>"
+                  data-uk="Створіть новий сайт із <strong>точно такою ж назвою</strong>"
+                >
+                  Create a new site with the <strong>EXACT same name</strong>
+                </li>
+                <li
+                  data-en="Copy files from <code>backups/.../files/</code> to <code>www/your-site/</code>"
+                  data-uk="Скопіюйте файли з <code>backups/.../files/</code> до <code>www/your-site/</code>"
+                >
+                  Copy files from <code>backups/.../files/</code> to
+                  <code>www/your-site/</code>
+                </li>
+                <li
+                  data-en="Import the SQL file via phpMyAdmin"
+                  data-uk="Імпортуйте SQL-файл через phpMyAdmin"
+                >
+                  Import the SQL file via phpMyAdmin
+                </li>
+                <li
+                  data-en="Restart the server (Stop → Start)"
+                  data-uk="Перезапустіть сервер (Stop → Start)"
+                >
+                  Restart the server (Stop → Start)
+                </li>
+              </ol>
+            </div>
+          </div>
+
+          <!-- STEP 7: STOP SERVER -->
+          <div class="step-detailed-item">
+            <div class="step-image-wrapper">
+              <img
+                class="steps_img_large"
+                src="img/step7.webp"
+                alt="Stop server"
+                loading="lazy"
+              />
+            </div>
+            <div class="step-text-content">
+              <h2
+                data-en="Step 7 — Stop the environment anytime"
+                data-uk="Крок 7 — Зупиніть середовище будь-коли"
+              >
+                Step 7 — Stop the environment anytime
+              </h2>
+              <p
+                data-en='Press <strong>"Stop"</strong> (or <strong>Ctrl+X</strong>) to pause the local server. Your projects, databases and settings remain saved between sessions.'
+                data-uk='Натисніть <strong>"Stop"</strong> (або <strong>Ctrl+X</strong>), щоб призупинити локальний сервер. Ваші проєкти, бази даних та налаштування залишаються збереженими між сесіями.'
+              >
+                Press <strong>"Stop"</strong> (or <strong>Ctrl+X</strong>) to
+                pause the local server. Your projects, databases and settings
+                remain saved between sessions.
+              </p>
+            </div>
+          </div>
+
+          <!-- STEP 8: DELETE SITE -->
+          <div class="step-detailed-item">
+            <div class="step-image-wrapper">
+              <img
+                class="steps_img_large"
+                src="img/step8.webp"
+                alt="Delete site"
+                loading="lazy"
+              />
+            </div>
+            <div class="step-text-content">
+              <h2
+                data-en="Step 8 — Remove unused projects"
+                data-uk="Крок 8 — Видаліть непотрібні проєкти"
+              >
+                Step 8 — Remove unused projects
+              </h2>
+              <p
+                data-en='Delete unnecessary projects with a single <strong>"Delete Site"</strong> button. This removes all files and the database. <strong>Please be careful</strong> and do not delete a project that is important to you!'
+                data-uk='Видаліть непотрібні проєкти однією кнопкою <strong>"Delete Site"</strong>. Це видаляє всі файли та базу даних. <strong>Будьте обережні</strong> та випадково не видаліть важливий проєкт!'
+              >
+                Delete unnecessary projects with a single
+                <strong>"Delete Site"</strong> button. This removes all files
+                and the database. <strong>Please be careful!</strong>
+              </p>
+            </div>
+          </div>
+
+          <!-- STEP 9: NAVIGATION -->
+          <div class="step-detailed-item">
+            <div class="step-image-wrapper">
+              <img
+                class="steps_img_large"
+                src="img/step9.webp"
+                alt="Navigation panel"
+                loading="lazy"
+              />
+            </div>
+            <div class="step-text-content">
+              <h2
+                data-en="Step 9 — Navigation and control"
+                data-uk="Крок 9 — Навігація та керування"
+              >
+                Step 9 — Navigation and control
+              </h2>
+              <p
+                data-en="The left panel displays all your projects. Select any project to open its admin, create a backup, or delete it. The right panel shows the server operation log."
+                data-uk="Ліва панель відображає всі ваші проєкти. Виберіть будь-який проєкт, щоб відкрити його адмін-панель, створити бекап або видалити його. Права панель показує журнал операцій сервера."
+              >
+                The left panel displays all your projects. Select any project to
+                open its admin, create a backup, or delete it. The right panel
+                shows the server operation log.
+              </p>
+            </div>
+          </div>
+
+          <!-- STEP 10: ABOUT -->
+          <div class="step-detailed-item">
+            <div class="step-image-wrapper">
+              <img
+                class="steps_img_large"
+                src="img/step10.webp"
+                alt="About WPronto"
+                loading="lazy"
+              />
+            </div>
+            <div class="step-text-content">
+              <h2
+                data-en="Step 10 — Learn more about WPronto"
+                data-uk="Крок 10 — Дізнайтеся більше про WPronto"
+              >
+                Step 10 — Learn more about WPronto
+              </h2>
+              <p
+                data-en="Explore additional information about the project, available tools and software license."
+                data-uk="Дізнайтеся більше про проєкт, доступні інструменти та ліцензію на програмне забезпечення."
+              >
+                Explore additional information about the project, available
+                tools and software license.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="closing-note"
+          data-en="WPronto was designed to stay out of your way. No bloated dashboards. No unnecessary complexity. Just a fast and clean WordPress development workflow."
+          data-uk="WPronto був розроблений так, щоб не заважати вам. Жодних громіздких панелей. Жодної зайвої складності. Просто швидкий і чистий робочий процес розробки WordPress."
+        >
+          WPronto was designed to stay out of your way. No bloated dashboards.
+          No unnecessary complexity. Just a fast and clean WordPress development
+          workflow.
+        </div>
+      </section>
+
+      <!-- PRO TIPS SECTION -->
+      <section class="pro-tips">
+        <h2 class="section-title" data-en="Pro tips" data-uk="Корисні поради">
+          Pro tips
+        </h2>
+        <div class="tips-list">
+          <div class="tip-item">
+            <i class="fas fa-check-circle"></i>
+            <div class="tip-content">
+              <span class="tip-text-en"
+                >Work in
+                <strong style="color: #10986b">SERVER RUNNING</strong>
+                mode. Deleting a site while the server is off leaves the
+                database file behind.</span
+              >
+              <span class="tip-text-uk" style="display: none"
+                >Працюйте у режимі
+                <strong style="color: #10986b">SERVER RUNNING</strong>.
+                Видалення сайту у вимкненому режимі залишає файл бази
+                даних.</span
+              >
+            </div>
+          </div>
+          <div class="tip-item">
+            <i class="fas fa-check-circle"></i>
+            <div class="tip-content">
+              <span class="tip-text-en"
+                >Make backups regularly — this saves time and nerves.</span
+              >
+              <span class="tip-text-uk" style="display: none"
+                >Регулярно створюйте бекапи — це збереже час і нерви.</span
+              >
+            </div>
+          </div>
+          <div class="tip-item">
+            <i class="fas fa-check-circle"></i>
+            <div class="tip-content">
+              <span class="tip-text-en"
+                >Be careful when deleting — this action is irreversible.</span
+              >
+              <span class="tip-text-uk" style="display: none"
+                >Будьте уважними під час видалення — ця дія незворотня.</span
+              >
+            </div>
+          </div>
+          <div class="tip-item">
+            <i class="fas fa-check-circle"></i>
+            <div class="tip-content">
+              <span class="tip-text-en"
+                >WPronto supports light and dark themes. The toggle is next to
+                the server status. Choose the one that suits you best.</span
+              >
+              <span class="tip-text-uk" style="display: none"
+                >WPronto підтримує світлу та темну теми. Перемикач біля статусу
+                сервера. Обирайте зручний варіант.</span
+              >
+            </div>
+          </div>
+          <div class="tip-item">
+            <i class="fas fa-check-circle"></i>
+            <div class="tip-content">
+              <span class="tip-text-en"
+                >Generate strong passwords for client sites using this
+                <a
+                  href="https://ovcharovcoder.github.io/wp-password-generator/"
+                  target="_blank"
+                  >password generator</a
+                >.</span
+              >
+              <span class="tip-text-uk" style="display: none"
+                >Генеруйте надійні паролі для клієнтських сайтів за допомогою
+                цього
+                <a
+                  href="https://ovcharovcoder.github.io/wp-password-generator/"
+                  target="_blank"
+                  >генератора паролів</a
+                >.</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq">
+        <h2
+          class="section-title"
+          data-en="Common questions"
+          data-uk="Поширені запитання"
+        >
+          Common questions
+        </h2>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span data-en="What is WPronto?" data-uk="Що таке WPronto?"
+              >What is WPronto?</span
+            ><i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p
+              data-en="WPronto is a lightweight local WordPress development environment for Windows powered by Nginx, PHP and MariaDB."
+              data-uk="WPronto — це легке локальне середовище розробки WordPress для Windows на базі Nginx, PHP та MariaDB."
+            >
+              WPronto is a lightweight local WordPress development environment
+              for Windows powered by Nginx, PHP and MariaDB.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span
+              data-en="Why does Windows block WPronto installation and how to fix it?"
+              data-uk="Чому Windows блокує встановлення WPronto та як це виправити?"
+            >
+              Why does Windows block WPronto installation and how to fix it?
+            </span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p
+              data-en="If Windows SmartScreen shows a warning about 'Unknown publisher', click <strong>More info</strong> → <strong>Run anyway</strong>. WPronto is completely safe."
+              data-uk="Якщо Windows SmartScreen показує попередження про 'Невідомий видавець', натисніть <strong>Докладніше</strong> → <strong>Все одно запустити</strong>. WPronto є повністю безпечним."
+            >
+              If Windows SmartScreen shows a warning about "Unknown publisher",
+              click <strong>More info</strong> → <strong>Run anyway</strong>.
+              WPronto is completely safe.
+            </p>
+            <p
+              data-en="You can also temporarily disable Smart App Control in Windows Security settings."
+              data-uk="Ви також можете тимчасово вимкнути Smart App Control у налаштуваннях Безпеки Windows."
+            >
+              You can also temporarily disable Smart App Control in Windows
+              Security settings.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span
+              data-en="How is WPronto different from other local servers?"
+              data-uk="Чим WPronto відрізняється від інших локальних серверів?"
+              >How is WPronto different from other local servers?</span
+            ><i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p
+              data-en="WPronto focuses on simplicity, lightweight architecture and WordPress-first workflow instead of overloaded interfaces and complicated configuration panels."
+              data-uk="WPronto зосереджується на простоті, легкій архітектурі та робочому процесі, орієнтованому на WordPress, замість перевантажених інтерфейсів і складних панелей налаштування."
+            >
+              WPronto focuses on simplicity, lightweight architecture and
+              WordPress-first workflow instead of overloaded interfaces and
+              complicated configuration panels.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span data-en="Is WPronto free?" data-uk="Чи безкоштовний WPronto?"
+              >Is WPronto free?</span
+            ><i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p
+              data-en="Yes. WPronto is completely free for personal and commercial use."
+              data-uk="Так. WPronto повністю безкоштовний для особистого та комерційного використання."
+            >
+              Yes. WPronto is completely free for personal and commercial use.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span
+              data-en="What software is included?"
+              data-uk="Що входить у комплект?"
+              >What software is included?</span
+            ><i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p
+              data-en="WPronto includes Nginx, WordPress, PHP, MariaDB, phpMyAdmin and WP-CLI out of the box."
+              data-uk="WPronto містить Nginx, WordPress, PHP, MariaDB, phpMyAdmin та WP-CLI з коробки."
+            >
+              WPronto includes Nginx, WordPress, PHP, MariaDB, phpMyAdmin and
+              WP-CLI out of the box.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span data-en="How do I update PHP?" data-uk="Як оновити PHP?"
+              >How do I update PHP?</span
+            ><i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p
+              data-en="Replace the files inside the <code>WPronto/core/php</code> folder with a newer PHP version."
+              data-uk="Замініть файли всередині папки <code>WPronto/core/php</code> на новішу версію PHP."
+            >
+              Replace the files inside the <code>WPronto/core/php</code> folder
+              with a newer PHP version.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span
+              data-en="How do I update WordPress?"
+              data-uk="Як оновити WordPress?"
+              >How do I update WordPress?</span
+            ><i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p
+              data-en="Replace the WordPress files inside the <code>WPronto/template</code> directory to use newer WordPress versions for future projects."
+              data-uk="Замініть файли WordPress всередині папки <code>WPronto/template</code>, щоб використовувати новіші версії WordPress для майбутніх проєктів."
+            >
+              Replace the WordPress files inside the
+              <code>WPronto/template</code> directory to use newer WordPress
+              versions for future projects.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span
+              data-en="Where are my projects stored?"
+              data-uk="Де зберігаються мої проєкти?"
+              >Where are my projects stored?</span
+            ><i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p
+              data-en="All local WordPress projects are stored inside the <code>WPronto/www</code> folder."
+              data-uk="Усі локальні проєкти WordPress зберігаються всередині папки <code>WPronto/www</code>."
+            >
+              All local WordPress projects are stored inside the
+              <code>WPronto/www</code> folder.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span
+              data-en="Does WPronto work as a local PHP server?"
+              data-uk="Чи працює WPronto як локальний PHP-сервер?"
+            >
+              Does WPronto work as a local PHP server?
+            </span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p
+              data-en="To use WPronto as a regular local PHP server:"
+              data-uk="Щоб використовувати WPronto як звичайний локальний PHP сервер:"
+            >
+              To use WPronto as a regular local PHP server:
+            </p>
+            <ol>
+              <li
+                data-en="Create a new project using the <strong>Create Site</strong> button"
+                data-uk="Створіть новий проєкт через кнопку <strong>Create Site</strong>"
+              >
+                Create a new project using the
+                <strong>Create Site</strong> button
+              </li>
+              <li
+                data-en="Navigate to the project folder: <code>WPronto/www/your_project_name/</code>"
+                data-uk="Перейдіть до папки з проєктом: <code>WPronto/www/назва_проєкту/</code>"
+              >
+                Navigate to the project folder:
+                <code>WPronto/www/your_project_name/</code>
+              </li>
+              <li
+                data-en="Delete all WordPress files in this folder, except for 2 files: <code>index.php</code> and <code>.user.ini</code>"
+                data-uk="Видаліть всі файли WordPress з цієї папки, окрім 2 файлів: <code>index.php</code> та <code>.user.ini</code>"
+              >
+                Delete all WordPress files in this folder, except for 2 files:
+                <code>index.php</code> and <code>.user.ini</code>"
+              </li>
+              <li
+                data-en="Make edits to the index.php file and open the project using the <strong>Open Admin</strong> button"
+                data-uk="Внесіть зміни до файлу index.php та відкрийте проєкт за допомогою кнопки <strong>Open Admin</strong>."
+              >
+                Make edits to the index.php file and open the project using the
+                <strong>Open Admin</strong>strong> button.
+              </li>
+            </ol>
+            <p
+              data-en="After that, you can use this folder for any PHP scripts, learning, or testing purposes. The local server will work exactly like a regular PHP environment. By default, php v.8.5 is used."
+              data-uk="Після цього ви можете використовувати цю папку для будь-яких PHP скриптів, навчання або тестування. Локальний сервер працюватиме як звичайне PHP середовище. За замовчуванням використовується php v.8.5."
+            >
+              After that, you can use this folder for any PHP scripts, learning,
+              or testing purposes. The local server will work exactly like a
+              regular PHP environment. By default, php v.8.5 is used.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="big-logo">
+        <img
+          class="big-logo-img"
+          src="img/logo.webp"
+          alt="logo"
+          loading="lazy"
+        />
+      </section>
+
+      <!-- DOWNLOAD CTA SECTION -->
+      <section class="download-cta-section">
+        <h2
+          data-en="Build WordPress projects faster."
+          data-uk="Створюйте проєкти WordPress швидше."
+        >
+          Build WordPress projects faster.
+        </h2>
+        <p
+          data-en="Download WPronto and get a lightweight local development environment designed specifically for WordPress developers."
+          data-uk="Завантажте WPronto та отримайте легке локальне середовище розробки, створене спеціально для розробників WordPress."
+        >
+          Download WPronto and get a lightweight local development environment
+          designed specifically for WordPress developers.
+        </p>
+        <div class="cta-buttons-group">
+          <a
+            href="https://www.dropbox.com/scl/fi/ssn922c9rnwcn41fpc3d1/WPronto_install.zip?rlkey=r1j159hu2gvcqcninp1syzvnr&st=oydh8k3i&dl=1"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+            ><i class="fas fa-download"></i>
+            <span data-en="Download" data-uk="Завантажити">Download</span></a
+          >
+          <a
+            href="https://github.com/ovcharovcoder/WPronto-src"
+            target="_blank"
+            class="btn btn-secondary"
+            ><i class="fab fa-github"></i> GitHub</a
+          >
+        </div>
+      </section>
+
+      <span
+        id="donateAnchor"
+        style="position: relative; top: -80px; display: block"
+      ></span>
+
+      <!-- DONATE SECTION -->
+      <section class="donate-section" id="donateSection">
+        <div class="donate-card">
+          <div class="donate-icon">
+            <i class="fas fa-heart"></i>
+          </div>
+          <h2 data-en="Support WPronto" data-uk="Підтримати WPronto">
+            Support WPronto
+          </h2>
+          <p
+            data-en="WPronto is open-source, lightweight and completely free. But development and maintenance require time and resources. Your support keeps the project alive and motivates me to create new features."
+            data-uk="WPronto — це відкритий, легкий та повністю безкоштовний проєкт. Але розробка та підтримка потребують часу та ресурсів. Ваша підтримка допомагає проєкту жити та мотивує мене створювати нові можливості."
+          >
+            WPronto is open-source, lightweight and completely free. But
+            development and maintenance require time and resources. Your support
+            keeps the project alive and motivates me to create new features.
+          </p>
+          <button class="donate-btn" id="donateBtn">
+            <i class="fab fa-paypal"></i>
+            <span data-en="Donate via PayPal" data-uk="Підтримати через PayPal"
+              >Donate via PayPal</span
+            >
+          </button>
+        </div>
+      </section>
+
+      <!-- POPUP MODAL -->
+      <div class="donate-modal" id="donateModal">
+        <div class="donate-modal-overlay"></div>
+        <div class="donate-modal-container">
+          <button class="donate-modal-close" id="closeModalBtn">&times;</button>
+
+          <div class="donate-modal-left">
+            <div class="donor-photo">
+              <img
+                src="img/author.webp"
+                alt="Andrii Ovcharov"
+                onerror="
+                  this.src =
+                    'https://placehold.co/300x300/0144a2/white?text=Andrii'
+                "
+              />
+            </div>
+            <div class="donor-info">
+              <h3>Andrii Ovcharov</h3>
+              <p><i class="fas fa-map-marker-alt"></i> Ukraine</p>
+            </div>
+          </div>
+
+          <div class="donate-modal-right">
+            <div class="modal-logo">
+              <img
+                src="img/logo.webp"
+                alt="WPronto"
+                onerror="this.src = 'https://placehold.co/100x100'"
+              />
+            </div>
+            <p
+              class="modal-message"
+              data-en="My official PayPal donation. You can leave a comment when making a donation — I love to read it. Thanks for your support! ❤️"
+              data-uk="Моє офіційне PayPal-пожертвування. Ви можете залишити коментар під час донату — мені приємно їх читати. Дякую за підтримку! ❤️"
+            >
+              My official PayPal donation. You can leave a comment when making a
+              donation — I love to read it. Thanks for your support! ❤️
+            </p>
+            <a
+              href="https://www.paypal.com/donate/?business=datoshcode@gmail.com&no_recurring=0&currency_code=USD"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="modal-paypal-btn"
+              id="paypalRedirectBtn"
+            >
+              <i class="fab fa-paypal"></i>
+              <span data-en="Send via PayPal" data-uk="Надіслати через PayPal"
+                >Send via PayPal</span
+              >
+            </a>
+            <p
+              class="modal-note"
+              data-en="You will be redirected to PayPal secure payment page."
+              data-uk="Ви будете перенаправлені на захищену сторінку оплати PayPal."
+            >
+              You will be redirected to PayPal secure payment page.
+            </p>
+            <p
+              class="modal-contact-note"
+              data-en="If you have any difficulties donating via PayPal, please contact me at: ovcharovcoder@gmail.com"
+              data-uk="Якщо у вас виникнуть труднощі з перерахуванням донату через PayPal, напишіть мені: ovcharovcoder@gmail.com"
+            >
+              If you have any difficulties donating via PayPal, please contact
+              me at: ovcharovcoder@gmail.com
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container footer-content">
+        <div class="footer-logo">WPronto</div>
+        <div
+          class="footer-text"
+          data-en="Fast, clean and lightweight local WordPress development for Windows."
+          data-uk="Швидка, чиста та легка локальна розробка WordPress для Windows."
+        >
+          Fast, clean and lightweight local WordPress development for Windows.
+        </div>
+        <div class="footer-text" style="opacity: 0.6; font-size: 0.85rem">
+          © 2026
+          <a
+            href="https://www.facebook.com/OvcharovCoder"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="
+              color: inherit;
+              text-decoration: none;
+              border-bottom: 1px dotted currentColor;
+              transition: opacity 0.2s ease;
+            "
+            onmouseover="this.style.opacity = '0.8'"
+            onmouseout="this.style.opacity = '1'"
+            >Andrii Ovcharov</a
+          >.
+          <span data-en="All rights reserved." data-uk="Всі права захищено."
+            >All rights reserved.</span
+          >
+          <span style="margin-left: 8px">
+            <a
+              href="#"
+              id="footerSupportLink"
+              style="
+                color: #ff3b30;
+                text-decoration: none;
+                transition: opacity 0.2s ease;
+                display: inline-flex;
+                align-items: center;
+                gap: 4px;
+              "
+              onmouseover="this.style.opacity = '0.8'"
+              onmouseout="this.style.opacity = '1'"
+            >
+              <i class="fas fa-heart" style="color: #ff3b30"></i>
+              <span
+                style="font-size: 0.8rem"
+                data-en="Support"
+                data-uk="Підтримати"
+                >Support</span
+              >
+            </a>
+          </span>
+        </div>
+        <div class="license-text">
+          <i class="fab fa-open-source"></i> Distributed under the MIT License
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+      // Додатковий код для скролу до секції донатів через якір
+      (function () {
+        const footerSupportLink = document.getElementById('footerSupportLink');
+        const supportNavBtn = document.getElementById('supportNavBtn');
+        const donateAnchor = document.getElementById('donateAnchor');
+
+        function scrollToDonate(e) {
+          e.preventDefault();
+          if (donateAnchor) {
+            donateAnchor.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start',
+            });
+          }
+        }
+
+        if (supportNavBtn)
+          supportNavBtn.addEventListener('click', scrollToDonate);
+        if (footerSupportLink)
+          footerSupportLink.addEventListener('click', scrollToDonate);
+      })();
+    </script>
+  </body>
+</html>
