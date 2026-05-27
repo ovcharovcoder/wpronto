@@ -18,7 +18,7 @@
 
 # Description
 
-WPronto is a portable local WordPress server for Windows.
+WPronto is a local WordPress server for Windows.
 
 It provides a complete local development stack including:
 
