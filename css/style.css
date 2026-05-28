@@ -1175,6 +1175,120 @@ footer {
   transition: color 0.3s ease;
 }
 
+/* ========== QUICK GUIDE SECTION ========== */
+.quick-guide {
+  margin: 80px auto;
+}
+
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 28px;
+}
+
+/* Для великих екранів - 3 колонки */
+@media (min-width: 1200px) {
+  .guide-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Для планшетів - 2 колонки */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .guide-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Для мобільних - 1 колонка */
+@media (max-width: 767px) {
+  .guide-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.guide-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  padding: 32px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.guide-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 20px 35px -12px rgba(1, 68, 162, 0.2);
+}
+
+.guide-icon {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.guide-icon i {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.guide-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--text);
+}
+
+.guide-card ol {
+  margin-left: 20px;
+  padding-left: 0;
+  list-style-position: outside;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.guide-card ol li {
+  margin-bottom: 8px;
+}
+
+.guide-card ol li strong {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.guide-card code {
+  background: rgba(1, 68, 162, 0.12);
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 0.85rem;
+  color: var(--primary);
+}
+
+.dark .guide-card code {
+  background: rgba(254, 107, 1, 0.2);
+  color: #fe6b01;
+}
+
+.guide-note {
+  margin-top: 20px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.guide-note.warning {
+  color: #dc2626;
+}
+
+.dark .guide-note.warning {
+  color: #f87171;
+}
+
 /* ========== ВСІ АДАПТИВНІ МЕДІА-ЗАПИТИ (ВПОРЯДКОВАНІ) ========== */
 
 /* 1. Адаптація великого логотипу (big-logo) */
