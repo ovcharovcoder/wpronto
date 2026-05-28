@@ -1367,34 +1367,41 @@
 
       <!-- DOWNLOAD CTA SECTION -->
       <section class="download-cta-section">
-        <h2
-          data-en="Build WordPress projects faster."
-          data-uk="Створюйте проєкти WordPress швидше."
-        >
-          Build WordPress projects faster.
-        </h2>
-        <p
-          data-en="Download WPronto and get a lightweight local development environment designed specifically for WordPress developers."
-          data-uk="Завантажте WPronto та отримайте легке локальне середовище розробки, створене спеціально для розробників WordPress."
-        >
-          Download WPronto and get a lightweight local development environment
-          designed specifically for WordPress developers.
-        </p>
-        <div class="cta-buttons-group">
-          <a
-            href="https://www.dropbox.com/scl/fi/6e7hdovymgsjj13n52i3f/WPronto_install.zip?rlkey=fe4rzew5ox8f9eiitjxx9f61b&dl=1"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-primary"
-            ><i class="fas fa-download"></i>
-            <span data-en="Download" data-uk="Завантажити">Download</span></a
-          >
-          <a
-            href="https://github.com/ovcharovcoder/WPronto-src"
-            target="_blank"
-            class="btn btn-secondary"
-            ><i class="fab fa-github"></i> GitHub</a
-          >
+        <div class="download-cta-container">
+          <div class="download-cta-image">
+            <img
+              src="img/notebook.webp"
+              alt="WPronto running on laptop"
+              loading="lazy"
+            />
+          </div>
+          <div class="download-cta-content">
+            <h2
+              data-en="Ready to launch local WordPress projects in seconds?"
+              data-uk="Готові запускати локальні WordPress-проєкти за секунди?"
+            >
+              Ready to launch local WordPress projects in seconds?
+            </h2>
+            <p
+              data-en="Download WPronto for free and start working today. Get a lightweight local development environment designed specifically for WordPress developers."
+              data-uk="Завантажте WPronto безкоштовно та почніть працювати вже сьогодні. Отримайте легке локальне середовище розробки, створене спеціально для розробників WordPress."
+            >
+              Download WPronto for free and start working today. Get a
+              lightweight local development environment designed specifically
+              for WordPress developers.
+            </p>
+            <div class="cta-buttons-group">
+              <a
+                href="https://www.dropbox.com/scl/fi/6e7hdovymgsjj13n52i3f/WPronto_install.zip?rlkey=fe4rzew5ox8f9eiitjxx9f61b&dl=1"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary"
+              >
+                <i class="fas fa-download"></i>
+                <span data-en="Download" data-uk="Завантажити">Download</span>
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -1578,6 +1585,7 @@
 
     <script src="js/main.js"></script>
     <script>
+      // Додатковий код для скролу до секції донатів через якір
       (function () {
         const footerSupportLink = document.getElementById('footerSupportLink');
         const supportNavBtn = document.getElementById('supportNavBtn');
