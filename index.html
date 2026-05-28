@@ -1348,28 +1348,45 @@
         </div>
 
         <div class="faq-item">
-  <button class="faq-question">
-    <span data-en="Why are PHP errors not showing and how to enable them?" data-uk="Чому не показуються помилки PHP і як їх увімкнути?">
-      Why are PHP errors not showing and how to enable them?
-    </span>
-    <i class="fas fa-chevron-down"></i>
-  </button>
-  <div class="faq-answer">
-    <p data-en="By default, WPronto has <code>display_errors = Off</code> for security reasons — this is the correct setting for production servers. But during development, you can easily enable error display by adding these lines at the beginning of your PHP script:" data-uk="За замовчуванням у WPronto встановлено <code>display_errors = Off</code> з міркувань безпеки — це правильне налаштування для бойових серверів. Але під час розробки ви можете легко увімкнути показ помилок, додавши наступні рядки на початку вашого PHP-скрипта:">
-      By default, WPronto has <code>display_errors = Off</code> for security reasons — this is the correct setting for production servers. But during development, you can easily enable error display by adding these lines at the beginning of your PHP script:
-    </p>
-    <pre style="background: #1e1e1e; color: #d4d4d4; padding: 12px; border-radius: 8px; overflow-x: auto; font-family: monospace; font-size: 13px;">
+          <button class="faq-question">
+            <span
+              data-en="Why are PHP errors not showing and how to enable them?"
+              data-uk="Чому не показуються помилки PHP і як їх увімкнути?"
+            >
+              Why are PHP errors not showing and how to enable them?
+            </span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p
+              data-en="By default, WPronto has PHP error display disabled for security reasons, and this is the correct decision. But during development, you can easily enable it by adding the following lines at the beginning of your PHP script:"
+              data-uk="За замовчуванням, у WPronto вимкнуто показ PHP помилок з міркувань безпеки і це правильне рішення. Але під час розробки, ви можете легко це увімкнути, додавши наступні рядки на початку вашого PHP-скрипта:"
+            >
+              By default, WPronto has PHP error display disabled for security
+              reasons, and this is the correct decision. But during development,
+              you can easily enable it by adding the following lines at the
+              beginning of your PHP script:
+            </p>
+            <pre
+              style="
+                background: #1e1e1e;
+                color: #d4d4d4;
+                padding: 12px;
+                border-radius: 8px;
+                overflow-x: auto;
+                font-family: monospace;
+                font-size: 13px;
+              "
+            >
 &lt;?php
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 // Your code here...
-?&gt;</pre>
-    <p data-en="After adding these lines, all PHP errors, warnings, and notices will be displayed directly in your browser." data-uk="Після додавання цих рядків, всі помилки, попередження та зауваження PHP відображатимуться безпосередньо у вашому браузері.">
-      After adding these lines, all PHP errors, warnings, and notices will be displayed directly in your browser.
-    </p>
-  </div>
-</div>
+?&gt;</pre
+            >
+          </div>
+        </div>
       </section>
 
       <section class="big-logo">
