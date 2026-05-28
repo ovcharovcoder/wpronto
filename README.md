@@ -1,5 +1,7 @@
 # WPronto site
 
+<img src="1.jpg" alt="baner">
+
 # WPronto
 
 > Fast, Simple & Powerful local WordPress development environment for Windows
