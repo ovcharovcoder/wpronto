@@ -10,9 +10,12 @@
 
 | Parameter | Value |
 |---|---|
-| **Version** | `1.0.0` |
+| **Version** | `1.0` |
 | **Author** | Andrii Ovcharov |
 | **Release Date** | `05/17/2026` |
+| **Version** | `2.0` |
+| **Author** | Andrii Ovcharov |
+| **Release Date** | `05/27/2026` |
 
 ---
 
