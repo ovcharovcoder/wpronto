@@ -1576,28 +1576,5 @@
     </footer>
 
     <script src="js/main.js"></script>
-    <script>
-      // Додатковий код для скролу до секції донатів через якір
-      (function () {
-        const footerSupportLink = document.getElementById('footerSupportLink');
-        const supportNavBtn = document.getElementById('supportNavBtn');
-        const donateAnchor = document.getElementById('donateAnchor');
-
-        function scrollToDonate(e) {
-          e.preventDefault();
-          if (donateAnchor) {
-            donateAnchor.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start',
-            });
-          }
-        }
-
-        if (supportNavBtn)
-          supportNavBtn.addEventListener('click', scrollToDonate);
-        if (footerSupportLink)
-          footerSupportLink.addEventListener('click', scrollToDonate);
-      })();
-    </script>
   </body>
 </html>
