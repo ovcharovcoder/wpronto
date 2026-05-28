@@ -77,6 +77,15 @@ This allows developers to create and manage WordPress websites locally without e
 
 WPronto is free software released under the **MIT License**.
 
+---
+
+## 👤 Author
+
+<img src="https://raw.githubusercontent.com/ovcharovcoder/neo-serene-theme/main/images/avatar.png" alt="Andrii Ovcharov" width="60px">
+
+**Andrii Ovcharov**  
+📧 ovcharovcoder@gmail.com
+
 
 
 
