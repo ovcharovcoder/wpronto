@@ -37,12 +37,12 @@ const sections = [
   { id: 'section-hero', labelEn: 'Hero', labelUk: 'Головна' },
   {
     id: 'section-hero-features',
-    labelEn: 'Features',
+    labelEn: 'Benefits',
     labelUk: 'Переваги',
   },
   { id: 'section-system-reqs', labelEn: 'Requirements', labelUk: 'Вимоги' },
   { id: 'section-tech-stack', labelEn: 'Tech Stack', labelUk: 'Технології' },
-  { id: 'section-features', labelEn: 'Opportunities', labelUk: 'Можливості' },
+  { id: 'section-features', labelEn: 'Features', labelUk: 'Можливості' },
   { id: 'section-how-it-works', labelEn: 'Get Started', labelUk: 'Розпочати' },
   {
     id: 'section-step-by-step',
