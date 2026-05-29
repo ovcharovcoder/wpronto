@@ -12,11 +12,9 @@
       name="keywords"
       content="WPronto, local WordPress server, WordPress locally, local WordPress server, XAMPP alternative, OpenServer alternative, WordPress development environment, localhost WordPress, free WordPress server"
     />
-    <!-- Preconnect for faster external resources loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
@@ -31,6 +29,19 @@
   <body>
     <div class="blob"></div>
     <div class="blob"></div>
+
+    <div class="section-nav" id="sectionNav"></div>
+
+    <button class="mobile-nav-btn" id="mobileNavBtn">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+    <div class="mobile-nav-panel" id="mobileNavPanel">
+      <button class="mobile-nav-close" id="mobileNavClose">
+        <i class="fas fa-times"></i>
+      </button>
+      <div id="mobileNavItems"></div>
+    </div>
 
     <nav>
       <div class="container nav-content">
@@ -48,14 +59,13 @@
             <span data-en="Download" data-uk="Завантажити">Download</span>
           </a>
           <button class="lang-btn" id="langToggle">
-            <i class="fas fa-language"></i>
+            <i class="fas fa-flag"></i>
             <span data-en="Українська" data-uk="English">Українська</span>
           </button>
           <button class="theme-btn" id="themeToggle">
             <i class="fas fa-moon"></i>
             <span data-en="Dark mode" data-uk="Темна тема">Dark mode</span>
           </button>
-          <!-- Нова кнопка підтримки з сердечком -->
           <button class="support-nav-btn" id="supportNavBtn">
             <i class="fas fa-heart"></i>
             <span data-en="Support" data-uk="Підтримати">Support</span>
@@ -65,8 +75,7 @@
     </nav>
 
     <main class="container">
-      <!-- HERO SECTION -->
-      <section class="hero">
+      <section class="hero" id="section-hero">
         <div
           class="badge"
           data-en="Minimum Setup • For WordPress on Windows • Clear Interface"
@@ -101,43 +110,42 @@
         </div>
       </section>
 
-      <section class="mini-info">
+      <section class="mini-info" id="section-mini-info">
         <div class="mini-info-grid">
           <div>
-            <i class="fas fa-bolt"></i>
-            <span
+            <i class="fas fa-bolt"></i
+            ><span
               data-en="One-click local server"
               data-uk="Локальний сервер в один клік"
               >One-click local server</span
             >
           </div>
           <div>
-            <i class="fab fa-wordpress"></i>
-            <span
+            <i class="fab fa-wordpress"></i
+            ><span
               data-en="WordPress-focused workflow"
               data-uk="Орієнтація на WordPress"
               >WordPress-focused workflow</span
             >
           </div>
           <div>
-            <i class="fas fa-database"></i>
-            <span
+            <i class="fas fa-database"></i
+            ><span
               data-en="Includes phpMyAdmin & WP-CLI"
               data-uk="Включає phpMyAdmin та WP-CLI"
               >Includes phpMyAdmin & WP-CLI</span
             >
           </div>
           <div>
-            <i class="fas fa-rocket"></i>
-            <span data-en="Lightweight and fast" data-uk="Легкий та швидкий"
+            <i class="fas fa-rocket"></i
+            ><span data-en="Lightweight and fast" data-uk="Легкий та швидкий"
               >Lightweight and fast</span
             >
           </div>
         </div>
       </section>
 
-      <!-- SYSTEM REQUIREMENTS -->
-      <section class="system-reqs">
+      <section class="system-reqs" id="section-system-reqs">
         <h2
           class="section-title"
           data-en="System requirements"
@@ -176,8 +184,7 @@
         </div>
       </section>
 
-      <!-- WHAT'S INSIDE (TECH STACK) -->
-      <section class="tech-stack">
+      <section class="tech-stack" id="section-tech-stack">
         <h2
           class="section-title"
           data-en="What's inside"
@@ -202,8 +209,7 @@
         </div>
       </section>
 
-      <!-- FEATURES -->
-      <section>
+      <section id="section-features">
         <h2
           class="section-title"
           data-en="Made for WordPress developers"
@@ -337,7 +343,6 @@
               line using WP-CLI.
             </p>
           </div>
-
           <div class="feature-card">
             <i class="fas fa-shield-alt"></i>
             <h3
@@ -357,8 +362,7 @@
         </div>
       </section>
 
-      <!-- HOW IT WORKS -->
-      <section>
+      <section id="section-how-it-works">
         <h2
           class="section-title"
           data-en="Get started in minutes"
@@ -412,8 +416,7 @@
         </div>
       </section>
 
-      <!-- STEP-BY-STEP (ENLARGED IMAGES) -->
-      <section>
+      <section id="section-step-by-step">
         <h2
           class="section-title"
           data-en="Step-by-step guide"
@@ -422,7 +425,6 @@
           Step-by-step guide
         </h2>
         <div class="steps-detailed">
-          <!-- STEP 1: START SERVER -->
           <div class="step-detailed-item">
             <div class="step-image-wrapper">
               <img
@@ -450,8 +452,6 @@
               </p>
             </div>
           </div>
-
-          <!-- STEP 2: CREATE SITE -->
           <div class="step-detailed-item">
             <div class="step-image-wrapper">
               <img
@@ -479,8 +479,6 @@
               </p>
             </div>
           </div>
-
-          <!-- STEP 3: INSTALL WORDPRESS -->
           <div class="step-detailed-item">
             <div class="step-image-wrapper">
               <img
@@ -508,8 +506,6 @@
               </p>
             </div>
           </div>
-
-          <!-- STEP 4: OPEN ADMIN DASHBOARD -->
           <div class="step-detailed-item">
             <div class="step-image-wrapper">
               <img
@@ -535,8 +531,6 @@
               </p>
             </div>
           </div>
-
-          <!-- STEP 5: MANAGE DATABASE -->
           <div class="step-detailed-item">
             <div class="step-image-wrapper">
               <img
@@ -566,14 +560,11 @@
                   data-en="Default database credentials:"
                   data-uk="Типові облікові дані бази даних:"
                   >Default database credentials:</strong
-                ><br />
-                Username: <code>root</code><br />
-                Password: <code>(empty)</code>
+                ><br />Username: <code>root</code><br />Password:
+                <code>(empty)</code>
               </p>
             </div>
           </div>
-
-          <!-- STEP 6: BACKUP SITE -->
           <div class="step-detailed-item">
             <div class="step-image-wrapper">
               <img
@@ -634,8 +625,6 @@
               </ol>
             </div>
           </div>
-
-          <!-- STEP 7: STOP SERVER -->
           <div class="step-detailed-item">
             <div class="step-image-wrapper">
               <img
@@ -662,8 +651,6 @@
               </p>
             </div>
           </div>
-
-          <!-- STEP 8: DELETE SITE -->
           <div class="step-detailed-item">
             <div class="step-image-wrapper">
               <img
@@ -690,8 +677,6 @@
               </p>
             </div>
           </div>
-
-          <!-- STEP 9: NAVIGATION -->
           <div class="step-detailed-item">
             <div class="step-image-wrapper">
               <img
@@ -718,8 +703,6 @@
               </p>
             </div>
           </div>
-
-          <!-- STEP 10: ABOUT -->
           <div class="step-detailed-item">
             <div class="step-image-wrapper">
               <img
@@ -747,325 +730,6 @@
           </div>
         </div>
 
-        <!-- QUICK GUIDE SECTION -->
-        <section class="quick-guide">
-          <h2
-            class="section-title"
-            data-en="Quick Guide"
-            data-uk="Швидкий посібник"
-          >
-            Quick Guide
-          </h2>
-
-          <div class="guide-grid">
-            <!-- 1. Як створити новий сайт? -->
-            <div class="guide-card">
-              <div class="guide-icon">
-                <i class="fas fa-plus-circle"></i>
-              </div>
-              <h3
-                data-en="How to create a new site?"
-                data-uk="Як створити новий сайт?"
-              >
-                How to create a new site?
-              </h3>
-              <ol>
-                <li
-                  data-en="Click the <strong>Start</strong> button"
-                  data-uk="Запустіть сервер кнопкою <strong>Start</strong>"
-                >
-                  Click the <strong>Start</strong> button
-                </li>
-                <li
-                  data-en="Click the <strong>Create Site</strong> button"
-                  data-uk="Натисніть кнопку <strong>Create Site</strong>"
-                >
-                  Click the <strong>Create Site</strong> button
-                </li>
-                <li data-en="Enter the site name" data-uk="Введіть назву сайту">
-                  Enter the site name
-                </li>
-                <li
-                  data-en="In the WordPress installation window, enter site title, username, and password"
-                  data-uk="У вікні встановлення WordPress введіть назву сайту, логін та пароль"
-                >
-                  In the WordPress installation window, enter site title,
-                  username, and password
-                </li>
-              </ol>
-              <p
-                class="guide-note"
-                data-en="After this, the admin panel of your site will open."
-                data-uk="Після цього відкриється адмін-панель вашого сайту."
-              >
-                After this, the admin panel of your site will open.
-              </p>
-            </div>
-
-            <!-- 2. Як відкрити існуючий сайт? -->
-            <div class="guide-card">
-              <div class="guide-icon">
-                <i class="fas fa-folder-open"></i>
-              </div>
-              <h3
-                data-en="How to open an existing site?"
-                data-uk="Як відкрити сайт, що був створений раніше?"
-              >
-                How to open an existing site?
-              </h3>
-              <ol>
-                <li
-                  data-en="Select the desired site on the left panel"
-                  data-uk="Оберіть на панелі ліворуч необхідний сайт"
-                >
-                  Select the desired site on the left panel
-                </li>
-                <li
-                  data-en="Click the <strong>Start</strong> button"
-                  data-uk="Запустіть сервер кнопкою <strong>Start</strong>"
-                >
-                  Click the <strong>Start</strong> button
-                </li>
-                <li
-                  data-en="Click the <strong>Open Admin</strong> button"
-                  data-uk="Натисніть кнопку <strong>Open Admin</strong>"
-                >
-                  Click the <strong>Open Admin</strong> button
-                </li>
-              </ol>
-              <p
-                class="guide-note"
-                data-en="After this, the admin panel of the selected site will become available."
-                data-uk="Після цього вам стане доступна адмін-панель обраного сайту."
-              >
-                After this, the admin panel of the selected site will become
-                available.
-              </p>
-            </div>
-
-            <!-- 3. Як видалити сайт? -->
-            <div class="guide-card">
-              <div class="guide-icon">
-                <i class="fas fa-trash-alt"></i>
-              </div>
-              <h3 data-en="How to delete a site?" data-uk="Як видалити сайт?">
-                How to delete a site?
-              </h3>
-              <ol>
-                <li
-                  data-en="Select the desired site on the left panel"
-                  data-uk="Оберіть на панелі ліворуч необхідний сайт"
-                >
-                  Select the desired site on the left panel
-                </li>
-                <li
-                  data-en="Click the <strong>Start</strong> button"
-                  data-uk="Запустіть сервер кнопкою <strong>Start</strong>"
-                >
-                  Click the <strong>Start</strong> button
-                </li>
-                <li
-                  data-en="Click the <strong>Delete Site</strong> button"
-                  data-uk="Натисніть кнопку <strong>Delete Site</strong>"
-                >
-                  Click the <strong>Delete Site</strong> button
-                </li>
-              </ol>
-              <p
-                class="guide-note warning"
-                data-en="After this, the site files and database will be permanently deleted."
-                data-uk="Після цього файли та база даних сайту будуть безповоротно видалені."
-              >
-                After this, the site files and database will be permanently
-                deleted.
-              </p>
-            </div>
-
-            <!-- 4. Як зробити бекап сайту? -->
-            <div class="guide-card">
-              <div class="guide-icon">
-                <i class="fas fa-archive"></i>
-              </div>
-              <h3
-                data-en="How to backup a site?"
-                data-uk="Як зробити бекап сайту?"
-              >
-                How to backup a site?
-              </h3>
-              <ol>
-                <li
-                  data-en="Select the desired site on the left panel"
-                  data-uk="Оберіть на панелі ліворуч необхідний сайт"
-                >
-                  Select the desired site on the left panel
-                </li>
-                <li
-                  data-en="Click the <strong>Start</strong> button"
-                  data-uk="Запустіть сервер кнопкою <strong>Start</strong>"
-                >
-                  Click the <strong>Start</strong> button
-                </li>
-                <li
-                  data-en="Click the <strong>Backup Site</strong> button"
-                  data-uk="Натисніть кнопку <strong>Backup Site</strong>"
-                >
-                  Click the <strong>Backup Site</strong> button
-                </li>
-              </ol>
-              <p
-                class="guide-note"
-                data-en="After this, a backup folder will be created in the program root, where backup files and databases are stored."
-                data-uk="Після цього у корені програми буде створена папка backup, де зберігаються резервні файли та база даних."
-              >
-                After this, a backup folder will be created in the program root,
-                where backup files and databases are stored.
-              </p>
-            </div>
-
-            <!-- 5. Як відновити бекап версію сайту? -->
-            <div class="guide-card">
-              <div class="guide-icon">
-                <i class="fas fa-undo-alt"></i>
-              </div>
-              <h3
-                data-en="How to restore a site from backup?"
-                data-uk="Як відновити бекап версію сайту?"
-              >
-                How to restore a site from backup?
-              </h3>
-              <ol>
-                <li
-                  data-en="Start the server with the <strong>Start</strong> button"
-                  data-uk="Запустіть сервер кнопкою <strong>Start</strong>"
-                >
-                  Start the server with the <strong>Start</strong> button
-                </li>
-                <li
-                  data-en="Create a new site with the <strong>Create Site</strong> button. The site name must exactly match your backup version name"
-                  data-uk="Створіть новий сайт кнопкою <strong>Create Site</strong>. Назва нового сайту має точно збігатися з назвою бекап версії"
-                >
-                  Create a new site with the
-                  <strong>Create Site</strong> button. The site name must
-                  exactly match your backup version name
-                </li>
-                <li
-                  data-en="Stop the server with the <strong>Stop</strong> button"
-                  data-uk="Зупиніть сервер кнопкою <strong>Stop</strong>"
-                >
-                  Stop the server with the <strong>Stop</strong> button
-                </li>
-                <li
-                  data-en="Go to <code>Your_Drive/WPronto/backup/your_project</code> and copy all WordPress files"
-                  data-uk="Перейдіть до <code>Ваш_диск/WPronto/backup/ваш_проєкт</code> та скопіюйте всі файли WordPress"
-                >
-                  Go to <code>Your_Drive/WPronto/backup/your_project</code> and
-                  copy all WordPress files
-                </li>
-                <li
-                  data-en="Go to <code>Your_Drive/WPronto/www/your_project</code> and paste the copied files with replacement"
-                  data-uk="Перейдіть до <code>Ваш_диск/WPronto/www/ваш_проєкт</code> та вставте раніше скопійовані файли з заміною"
-                >
-                  Go to <code>Your_Drive/WPronto/www/your_project</code> and
-                  paste the copied files with replacement
-                </li>
-                <li
-                  data-en="Start the server with the <strong>Start</strong> button"
-                  data-uk="Запустіть сервер кнопкою <strong>Start</strong>"
-                >
-                  Start the server with the <strong>Start</strong> button
-                </li>
-                <li
-                  data-en="Go to the database via the <strong>phpMyAdmin</strong> button and import the database file"
-                  data-uk="Перейдіть до бази даних кнопкою <strong>phpMyAdmin</strong> та імпортуйте файл бази даних"
-                >
-                  Go to the database via the <strong>phpMyAdmin</strong> button
-                  and import the database file
-                </li>
-              </ol>
-              <p
-                class="guide-note"
-                data-en="After this, your site will be restored from the backup."
-                data-uk="Після цього ваш сайт буде відновлено з бекапу."
-              >
-                After this, your site will be restored from the backup.
-              </p>
-            </div>
-
-            <!-- 6. Як перетворити WPronto на PHP сервер? -->
-            <div class="guide-card">
-              <div class="guide-icon">
-                <i class="fab fa-php"></i>
-              </div>
-              <h3
-                data-en="How to turn WPronto into a PHP server for testing and learning?"
-                data-uk="Як перетворити WPronto на PHP сервер для тестування та навчання?"
-              >
-                How to turn WPronto into a PHP server for testing and learning?
-              </h3>
-              <ol>
-                <li
-                  data-en="Start the server with the <strong>Start</strong> button"
-                  data-uk="Запустіть сервер кнопкою <strong>Start</strong>"
-                >
-                  Start the server with the <strong>Start</strong> button
-                </li>
-                <li
-                  data-en="Create a new site with the <strong>Create Site</strong> button (e.g., named 'test')"
-                  data-uk="Створіть новий сайт кнопкою <strong>Create Site</strong> (наприклад, з назвою 'test')"
-                >
-                  Create a new site with the <strong>Create Site</strong> button
-                  (e.g., named 'test')
-                </li>
-                <li
-                  data-en="Stop the server with the <strong>Stop</strong> button"
-                  data-uk="Зупиніть сервер кнопкою <strong>Stop</strong>"
-                >
-                  Stop the server with the <strong>Stop</strong> button
-                </li>
-                <li
-                  data-en="Go to <code>Your_Drive/WPronto/www/test</code>"
-                  data-uk="Перейдіть до <code>Ваш_диск/WPronto/www/test</code>"
-                >
-                  Go to <code>Your_Drive/WPronto/www/test</code>
-                </li>
-                <li
-                  data-en="Delete all files and folders except: <code>index.php</code>"
-                  data-uk="Видаліть всі файли та папки, окрім: <code>index.php</code>"
-                >
-                  Delete all files and folders except:
-                  <code>index.php</code>
-                </li>
-                <li
-                  data-en="Make changes to the <code>index.php</code> file"
-                  data-uk="Внесіть зміни до файлу <code>index.php</code>"
-                >
-                  Make changes to the <code>index.php</code> file
-                </li>
-                <li
-                  data-en="Start the server with the <strong>Start</strong> button"
-                  data-uk="Запустіть сервер кнопкою <strong>Start</strong>"
-                >
-                  Start the server with the <strong>Start</strong> button
-                </li>
-                <li
-                  data-en="Open the project with the <strong>Open Admin</strong> button"
-                  data-uk="Відкрийте проєкт кнопкою <strong>Open Admin</strong>"
-                >
-                  Open the project with the <strong>Open Admin</strong> button
-                </li>
-              </ol>
-              <p
-                class="guide-note"
-                data-en="After this, you can use this folder for any PHP scripts, learning, or testing."
-                data-uk="Після цього ви можете використовувати цю папку для будь-яких PHP скриптів, навчання або тестування."
-              >
-                After this, you can use this folder for any PHP scripts,
-                learning, or testing.
-              </p>
-            </div>
-          </div>
-        </section>
-
         <div
           class="closing-note"
           data-en="WPronto was designed to stay out of your way. No bloated dashboards. No unnecessary complexity. Just a fast and clean WordPress development workflow."
@@ -1077,8 +741,299 @@
         </div>
       </section>
 
-      <!-- PRO TIPS SECTION -->
-      <section class="pro-tips">
+      <section class="quick-guide" id="section-quick-guide">
+        <h2
+          class="section-title"
+          data-en="Quick Guide"
+          data-uk="Швидкий посібник"
+        >
+          Quick Guide
+        </h2>
+        <div class="guide-grid">
+          <div class="guide-card">
+            <div class="guide-icon"><i class="fas fa-plus-circle"></i></div>
+            <h3
+              data-en="How to create a new site?"
+              data-uk="Як створити новий сайт?"
+            >
+              How to create a new site?
+            </h3>
+            <ol>
+              <li
+                data-en="Click the <strong>Start</strong> button"
+                data-uk="Запустіть сервер кнопкою <strong>Start</strong>"
+              >
+                Click the <strong>Start</strong> button
+              </li>
+              <li
+                data-en="Click the <strong>Create Site</strong> button"
+                data-uk="Натисніть кнопку <strong>Create Site</strong>"
+              >
+                Click the <strong>Create Site</strong> button
+              </li>
+              <li data-en="Enter the site name" data-uk="Введіть назву сайту">
+                Enter the site name
+              </li>
+              <li
+                data-en="In the WordPress installation window, enter site title, username, and password"
+                data-uk="У вікні встановлення WordPress введіть назву сайту, логін та пароль"
+              >
+                In the WordPress installation window, enter site title,
+                username, and password
+              </li>
+            </ol>
+            <p
+              class="guide-note"
+              data-en="After this, the admin panel of your site will open."
+              data-uk="Після цього відкриється адмін-панель вашого сайту."
+            >
+              After this, the admin panel of your site will open.
+            </p>
+          </div>
+          <div class="guide-card">
+            <div class="guide-icon"><i class="fas fa-folder-open"></i></div>
+            <h3
+              data-en="How to open an existing site?"
+              data-uk="Як відкрити сайт, що був створений раніше?"
+            >
+              How to open an existing site?
+            </h3>
+            <ol>
+              <li
+                data-en="Select the desired site on the left panel"
+                data-uk="Оберіть на панелі ліворуч необхідний сайт"
+              >
+                Select the desired site on the left panel
+              </li>
+              <li
+                data-en="Click the <strong>Start</strong> button"
+                data-uk="Запустіть сервер кнопкою <strong>Start</strong>"
+              >
+                Click the <strong>Start</strong> button
+              </li>
+              <li
+                data-en="Click the <strong>Open Admin</strong> button"
+                data-uk="Натисніть кнопку <strong>Open Admin</strong>"
+              >
+                Click the <strong>Open Admin</strong> button
+              </li>
+            </ol>
+            <p
+              class="guide-note"
+              data-en="After this, the admin panel of the selected site will become available."
+              data-uk="Після цього вам стане доступна адмін-панель обраного сайту."
+            >
+              After this, the admin panel of the selected site will become
+              available.
+            </p>
+          </div>
+          <div class="guide-card">
+            <div class="guide-icon"><i class="fas fa-trash-alt"></i></div>
+            <h3 data-en="How to delete a site?" data-uk="Як видалити сайт?">
+              How to delete a site?
+            </h3>
+            <ol>
+              <li
+                data-en="Select the desired site on the left panel"
+                data-uk="Оберіть на панелі ліворуч необхідний сайт"
+              >
+                Select the desired site on the left panel
+              </li>
+              <li
+                data-en="Click the <strong>Start</strong> button"
+                data-uk="Запустіть сервер кнопкою <strong>Start</strong>"
+              >
+                Click the <strong>Start</strong> button
+              </li>
+              <li
+                data-en="Click the <strong>Delete Site</strong> button"
+                data-uk="Натисніть кнопку <strong>Delete Site</strong>"
+              >
+                Click the <strong>Delete Site</strong> button
+              </li>
+            </ol>
+            <p
+              class="guide-note warning"
+              data-en="After this, the site files and database will be permanently deleted."
+              data-uk="Після цього файли та база даних сайту будуть безповоротно видалені."
+            >
+              After this, the site files and database will be permanently
+              deleted.
+            </p>
+          </div>
+          <div class="guide-card">
+            <div class="guide-icon"><i class="fas fa-archive"></i></div>
+            <h3
+              data-en="How to backup a site?"
+              data-uk="Як зробити бекап сайту?"
+            >
+              How to backup a site?
+            </h3>
+            <ol>
+              <li
+                data-en="Select the desired site on the left panel"
+                data-uk="Оберіть на панелі ліворуч необхідний сайт"
+              >
+                Select the desired site on the left panel
+              </li>
+              <li
+                data-en="Click the <strong>Start</strong> button"
+                data-uk="Запустіть сервер кнопкою <strong>Start</strong>"
+              >
+                Click the <strong>Start</strong> button
+              </li>
+              <li
+                data-en="Click the <strong>Backup Site</strong> button"
+                data-uk="Натисніть кнопку <strong>Backup Site</strong>"
+              >
+                Click the <strong>Backup Site</strong> button
+              </li>
+            </ol>
+            <p
+              class="guide-note"
+              data-en="After this, a backup folder will be created in the program root, where backup files and databases are stored."
+              data-uk="Після цього у корені програми буде створена папка backup, де зберігаються резервні файли та база даних."
+            >
+              After this, a backup folder will be created in the program root,
+              where backup files and databases are stored.
+            </p>
+          </div>
+          <div class="guide-card">
+            <div class="guide-icon"><i class="fas fa-undo-alt"></i></div>
+            <h3
+              data-en="How to restore a site from backup?"
+              data-uk="Як відновити бекап версію сайту?"
+            >
+              How to restore a site from backup?
+            </h3>
+            <ol>
+              <li
+                data-en="Start the server with the <strong>Start</strong> button"
+                data-uk="Запустіть сервер кнопкою <strong>Start</strong>"
+              >
+                Start the server with the <strong>Start</strong> button
+              </li>
+              <li
+                data-en="Create a new site with the <strong>Create Site</strong> button. The site name must exactly match your backup version name"
+                data-uk="Створіть новий сайт кнопкою <strong>Create Site</strong>. Назва нового сайту має точно збігатися з назвою бекап версії"
+              >
+                Create a new site with the <strong>Create Site</strong> button.
+                The site name must exactly match your backup version name
+              </li>
+              <li
+                data-en="Stop the server with the <strong>Stop</strong> button"
+                data-uk="Зупиніть сервер кнопкою <strong>Stop</strong>"
+              >
+                Stop the server with the <strong>Stop</strong> button
+              </li>
+              <li
+                data-en="Go to <code>Your_Drive/WPronto/backup/your_project</code> and copy all WordPress files"
+                data-uk="Перейдіть до <code>Ваш_диск/WPronto/backup/ваш_проєкт</code> та скопіюйте всі файли WordPress"
+              >
+                Go to <code>Your_Drive/WPronto/backup/your_project</code> and
+                copy all WordPress files
+              </li>
+              <li
+                data-en="Go to <code>Your_Drive/WPronto/www/your_project</code> and paste the copied files with replacement"
+                data-uk="Перейдіть до <code>Ваш_диск/WPronto/www/ваш_проєкт</code> та вставте раніше скопійовані файли з заміною"
+              >
+                Go to <code>Your_Drive/WPronto/www/your_project</code> and paste
+                the copied files with replacement
+              </li>
+              <li
+                data-en="Start the server with the <strong>Start</strong> button"
+                data-uk="Запустіть сервер кнопкою <strong>Start</strong>"
+              >
+                Start the server with the <strong>Start</strong> button
+              </li>
+              <li
+                data-en="Go to the database via the <strong>phpMyAdmin</strong> button and import the database file"
+                data-uk="Перейдіть до бази даних кнопкою <strong>phpMyAdmin</strong> та імпортуйте файл бази даних"
+              >
+                Go to the database via the <strong>phpMyAdmin</strong> button
+                and import the database file
+              </li>
+            </ol>
+            <p
+              class="guide-note"
+              data-en="After this, your site will be restored from the backup."
+              data-uk="Після цього ваш сайт буде відновлено з бекапу."
+            >
+              After this, your site will be restored from the backup.
+            </p>
+          </div>
+          <div class="guide-card">
+            <div class="guide-icon"><i class="fab fa-php"></i></div>
+            <h3
+              data-en="How to turn WPronto into a PHP server for testing and learning?"
+              data-uk="Як перетворити WPronto на PHP сервер для тестування та навчання?"
+            >
+              How to turn WPronto into a PHP server for testing and learning?
+            </h3>
+            <ol>
+              <li
+                data-en="Start the server with the <strong>Start</strong> button"
+                data-uk="Запустіть сервер кнопкою <strong>Start</strong>"
+              >
+                Start the server with the <strong>Start</strong> button
+              </li>
+              <li
+                data-en="Create a new site with the <strong>Create Site</strong> button (e.g., named 'test')"
+                data-uk="Створіть новий сайт кнопкою <strong>Create Site</strong> (наприклад, з назвою 'test')"
+              >
+                Create a new site with the <strong>Create Site</strong> button
+                (e.g., named 'test')
+              </li>
+              <li
+                data-en="Stop the server with the <strong>Stop</strong> button"
+                data-uk="Зупиніть сервер кнопкою <strong>Stop</strong>"
+              >
+                Stop the server with the <strong>Stop</strong> button
+              </li>
+              <li
+                data-en="Go to <code>Your_Drive/WPronto/www/test</code>"
+                data-uk="Перейдіть до <code>Ваш_диск/WPronto/www/test</code>"
+              >
+                Go to <code>Your_Drive/WPronto/www/test</code>
+              </li>
+              <li
+                data-en="Delete all files and folders except: <code>index.php</code>"
+                data-uk="Видаліть всі файли та папки, окрім: <code>index.php</code>"
+              >
+                Delete all files and folders except: <code>index.php</code>
+              </li>
+              <li
+                data-en="Make changes to the <code>index.php</code> file"
+                data-uk="Внесіть зміни до файлу <code>index.php</code>"
+              >
+                Make changes to the <code>index.php</code> file
+              </li>
+              <li
+                data-en="Start the server with the <strong>Start</strong> button"
+                data-uk="Запустіть сервер кнопкою <strong>Start</strong>"
+              >
+                Start the server with the <strong>Start</strong> button
+              </li>
+              <li
+                data-en="Open the project with the <strong>Open Admin</strong> button"
+                data-uk="Відкрийте проєкт кнопкою <strong>Open Admin</strong>"
+              >
+                Open the project with the <strong>Open Admin</strong> button
+              </li>
+            </ol>
+            <p
+              class="guide-note"
+              data-en="After this, you can use this folder for any PHP scripts, learning, or testing."
+              data-uk="Після цього ви можете використовувати цю папку для будь-яких PHP скриптів, навчання або тестування."
+            >
+              After this, you can use this folder for any PHP scripts, learning,
+              or testing.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="pro-tips" id="section-pro-tips">
         <h2 class="section-title" data-en="Pro tips" data-uk="Корисні поради">
           Pro tips
         </h2>
@@ -1088,11 +1043,10 @@
             <div class="tip-content">
               <span class="tip-text-en"
                 >Work in
-                <strong style="color: #10986b">SERVER RUNNING</strong>
-                mode. Deleting a site while the server is off leaves the
-                database file behind.</span
-              >
-              <span class="tip-text-uk" style="display: none"
+                <strong style="color: #10986b">SERVER RUNNING</strong> mode.
+                Deleting a site while the server is off leaves the database file
+                behind.</span
+              ><span class="tip-text-uk" style="display: none"
                 >Працюйте у режимі
                 <strong style="color: #10986b">SERVER RUNNING</strong>.
                 Видалення сайту у вимкненому режимі залишає файл бази
@@ -1105,8 +1059,7 @@
             <div class="tip-content">
               <span class="tip-text-en"
                 >Make backups regularly — this saves time and nerves.</span
-              >
-              <span class="tip-text-uk" style="display: none"
+              ><span class="tip-text-uk" style="display: none"
                 >Регулярно створюйте бекапи — це збереже час і нерви.</span
               >
             </div>
@@ -1116,8 +1069,7 @@
             <div class="tip-content">
               <span class="tip-text-en"
                 >Be careful when deleting — this action is irreversible.</span
-              >
-              <span class="tip-text-uk" style="display: none"
+              ><span class="tip-text-uk" style="display: none"
                 >Будьте уважними під час видалення — ця дія незворотня.</span
               >
             </div>
@@ -1128,8 +1080,7 @@
               <span class="tip-text-en"
                 >WPronto supports light and dark themes. The toggle is next to
                 the server status. Choose the one that suits you best.</span
-              >
-              <span class="tip-text-uk" style="display: none"
+              ><span class="tip-text-uk" style="display: none"
                 >WPronto підтримує світлу та темну теми. Перемикач біля статусу
                 сервера. Обирайте зручний варіант.</span
               >
@@ -1145,8 +1096,7 @@
                   target="_blank"
                   >password generator</a
                 >.</span
-              >
-              <span class="tip-text-uk" style="display: none"
+              ><span class="tip-text-uk" style="display: none"
                 >Генеруйте надійні паролі для клієнтських сайтів за допомогою
                 цього
                 <a
@@ -1160,8 +1110,7 @@
         </div>
       </section>
 
-      <!-- FAQ SECTION -->
-      <section class="faq">
+      <section class="faq" id="section-faq">
         <h2
           class="section-title"
           data-en="Common questions"
@@ -1174,10 +1123,9 @@
             <span
               data-en="Why does Windows block WPronto installation and how to fix it?"
               data-uk="Чому Windows блокує встановлення WPronto та як це виправити?"
-            >
-              Why does Windows block WPronto installation and how to fix it?
-            </span>
-            <i class="fas fa-chevron-down"></i>
+              >Why does Windows block WPronto installation and how to fix
+              it?</span
+            ><i class="fas fa-chevron-down"></i>
           </button>
           <div class="faq-answer">
             <p
@@ -1197,7 +1145,6 @@
             </p>
           </div>
         </div>
-
         <div class="faq-item">
           <button class="faq-question">
             <span
@@ -1217,7 +1164,6 @@
             </p>
           </div>
         </div>
-
         <div class="faq-item">
           <button class="faq-question">
             <span data-en="Is WPronto free?" data-uk="Чи безкоштовний WPronto?"
@@ -1229,11 +1175,11 @@
               data-en="Yes. WPronto is completely free for personal and commercial use. It is distributed under the terms of the MIT License."
               data-uk="Так. WPronto повністю безкоштовний для особистого та комерційного використання. Поширюється на умовах ліцензії MIT."
             >
-              Yes. WPronto is completely free for personal and commercial use. It is distributed under the terms of the MIT License.
+              Yes. WPronto is completely free for personal and commercial use.
+              It is distributed under the terms of the MIT License.
             </p>
           </div>
         </div>
-
         <div class="faq-item">
           <button class="faq-question">
             <span
@@ -1252,7 +1198,6 @@
             </p>
           </div>
         </div>
-
         <div class="faq-item">
           <button class="faq-question">
             <span data-en="How do I update PHP?" data-uk="Як оновити PHP?"
@@ -1269,7 +1214,6 @@
             </p>
           </div>
         </div>
-
         <div class="faq-item">
           <button class="faq-question">
             <span
@@ -1289,7 +1233,6 @@
             </p>
           </div>
         </div>
-
         <div class="faq-item">
           <button class="faq-question">
             <span
@@ -1308,16 +1251,13 @@
             </p>
           </div>
         </div>
-
         <div class="faq-item">
           <button class="faq-question">
             <span
               data-en="What are the default database login and password?"
               data-uk="Який логін та пароль до бази даних за замовчуванням?"
-            >
-              What are the default database login and password?
-            </span>
-            <i class="fas fa-chevron-down"></i>
+              >What are the default database login and password?</span
+            ><i class="fas fa-chevron-down"></i>
           </button>
           <div class="faq-answer">
             <p
@@ -1328,30 +1268,31 @@
             </p>
           </div>
         </div>
-
         <div class="faq-item">
-  <button class="faq-question">
-    <span data-en="What is the maximum file upload size?" data-uk="Який максимальний об'єм завантаження файлів?">
-      What is the maximum file upload size?
-    </span>
-    <i class="fas fa-chevron-down"></i>
-  </button>
-  <div class="faq-answer">
-    <p data-en="WPronto supports file uploads up to <strong>256 MB</strong> by default." data-uk="WPronto підтримує завантаження файлів об'ємом до <strong>256 МБ</strong> за замовчуванням.">
-      WPronto supports file uploads up to <strong>256 MB</strong> by default.
-    </p>
-  </div>
-</div>
-        
+          <button class="faq-question">
+            <span
+              data-en="What is the maximum file upload size?"
+              data-uk="Який максимальний об'єм завантаження файлів?"
+              >What is the maximum file upload size?</span
+            ><i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p
+              data-en="WPronto supports file uploads up to <strong>256 MB</strong> by default."
+              data-uk="WPronto підтримує завантаження файлів об'ємом до <strong>256 МБ</strong> за замовчуванням."
+            >
+              WPronto supports file uploads up to <strong>256 MB</strong> by
+              default.
+            </p>
+          </div>
+        </div>
         <div class="faq-item">
           <button class="faq-question">
             <span
               data-en="Why are PHP errors not showing and how to enable them?"
               data-uk="Чому не показуються помилки PHP і як їх увімкнути?"
-            >
-              Why are PHP errors not showing and how to enable them?
-            </span>
-            <i class="fas fa-chevron-down"></i>
+              >Why are PHP errors not showing and how to enable them?</span
+            ><i class="fas fa-chevron-down"></i>
           </button>
           <div class="faq-answer">
             <p
@@ -1385,7 +1326,7 @@ error_reporting(E_ALL);
         </div>
       </section>
 
-      <section class="big-logo">
+      <section class="big-logo" id="section-big-logo">
         <img
           class="big-logo-img"
           src="img/logo.webp"
@@ -1394,8 +1335,7 @@ error_reporting(E_ALL);
         />
       </section>
 
-      <!-- DOWNLOAD CTA SECTION -->
-      <section class="download-cta-section">
+      <section class="download-cta-section" id="section-download-cta">
         <div class="download-cta-container">
           <div class="download-cta-image">
             <img
@@ -1425,10 +1365,11 @@ error_reporting(E_ALL);
                 target="_blank"
                 rel="noopener noreferrer"
                 class="btn btn-primary"
+                ><i class="fas fa-download"></i
+                ><span data-en="Download" data-uk="Завантажити"
+                  >Download</span
+                ></a
               >
-                <i class="fas fa-download"></i>
-                <span data-en="Download" data-uk="Завантажити">Download</span>
-              </a>
             </div>
           </div>
         </div>
@@ -1439,12 +1380,10 @@ error_reporting(E_ALL);
         style="position: relative; top: -80px; display: block"
       ></span>
 
-      <!-- DONATE SECTION -->
-      <section class="donate-section" id="donateSection">
+      <!-- SUPPORT SECTION (VISIBLE) - for navigation menu -->
+      <section class="donate-section" id="section-support">
         <div class="donate-card">
-          <div class="donate-icon">
-            <i class="fas fa-heart"></i>
-          </div>
+          <div class="donate-icon"><i class="fas fa-heart"></i></div>
           <h2 data-en="Support WPronto" data-uk="Підтримати WPronto">
             Support WPronto
           </h2>
@@ -1457,8 +1396,8 @@ error_reporting(E_ALL);
             keeps the project alive and motivates me to create new features.
           </p>
           <button class="donate-btn" id="donateBtn">
-            <i class="fab fa-paypal"></i>
-            <span data-en="Donate via PayPal" data-uk="Підтримати через PayPal"
+            <i class="fab fa-paypal"></i
+            ><span data-en="Donate via PayPal" data-uk="Підтримати через PayPal"
               >Donate via PayPal</span
             >
           </button>
@@ -1470,7 +1409,6 @@ error_reporting(E_ALL);
         <div class="donate-modal-overlay"></div>
         <div class="donate-modal-container">
           <button class="donate-modal-close" id="closeModalBtn">&times;</button>
-
           <div class="donate-modal-left">
             <div class="donor-photo">
               <img
@@ -1487,7 +1425,6 @@ error_reporting(E_ALL);
               <p><i class="fas fa-map-marker-alt"></i> Ukraine</p>
             </div>
           </div>
-
           <div class="donate-modal-right">
             <div class="modal-logo">
               <img
@@ -1510,12 +1447,11 @@ error_reporting(E_ALL);
               rel="noopener noreferrer"
               class="modal-paypal-btn"
               id="paypalRedirectBtn"
-            >
-              <i class="fab fa-paypal"></i>
-              <span data-en="Send via PayPal" data-uk="Надіслати через PayPal"
+              ><i class="fab fa-paypal"></i
+              ><span data-en="Send via PayPal" data-uk="Надіслати через PayPal"
                 >Send via PayPal</span
-              >
-            </a>
+              ></a
+            >
             <p
               class="modal-note"
               data-en="You will be redirected to PayPal secure payment page."
@@ -1536,78 +1472,124 @@ error_reporting(E_ALL);
       </div>
     </main>
 
-    <footer>
-      <div class="container footer-content">
-        <div class="footer-logo">WPronto</div>
-        <div
-          class="footer-name-explanation"
-          style="
-            font-size: 0.7rem;
-            opacity: 0.6;
-            margin-top: -5px;
-            margin-bottom: 10px;
-          "
-        >
-          <span
-            data-en="W (Web/WordPress) + Pronto (fast) = WPronto → fast local server"
-            data-uk="W (Web/WordPress) + Pronto (швидко) = WPronto → швидкий локальний сервер"
-          >
-            W (Web/WordPress) + Pronto (fast) = WPronto → fast local server
-          </span>
-        </div>
-        <div
-          class="footer-text"
-          data-en="Fast, clean and lightweight local WordPress development for Windows."
-          data-uk="Швидка, чиста та легка локальна розробка WordPress для Windows."
-        >
-          Fast, clean and lightweight local WordPress development for Windows.
-        </div>
-        <div class="footer-text" style="opacity: 0.6; font-size: 0.85rem">
-          © 2026
-          <a
-            href="https://www.facebook.com/OvcharovCoder"
-            target="_blank"
-            rel="noopener noreferrer"
-            style="
-              color: inherit;
-              text-decoration: none;
-              border-bottom: 1px dotted currentColor;
-              transition: opacity 0.2s ease;
-            "
-            onmouseover="this.style.opacity = '0.8'"
-            onmouseout="this.style.opacity = '1'"
-            >Andrii Ovcharov</a
-          >.
-          <span data-en="All rights reserved." data-uk="Всі права захищено."
-            >All rights reserved.</span
-          >
-          <span style="margin-left: 8px">
-            <a
-              href="#"
-              id="footerSupportLink"
-              style="
-                color: #ff3b30;
-                text-decoration: none;
-                transition: opacity 0.2s ease;
-                display: inline-flex;
-                align-items: center;
-                gap: 4px;
-              "
-              onmouseover="this.style.opacity = '0.8'"
-              onmouseout="this.style.opacity = '1'"
-            >
-              <i class="fas fa-heart" style="color: #ff3b30"></i>
-              <span
-                style="font-size: 0.8rem"
-                data-en="Support"
-                data-uk="Підтримати"
-                >Support</span
+    <footer class="footer-enhanced" id="section-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <div class="footer-logo-area">
+              <img
+                src="img/logo.webp"
+                alt="WPronto logo"
+                class="footer-logo-img"
+              />
+              <div
+                class="footer-tagline"
+                data-en="Launch your WordPress sites in seconds!"
+                data-uk="Запустіть свої сайти на WordPress за лічені секунди!"
               >
-            </a>
-          </span>
+                Launch your WordPress sites in seconds!
+              </div>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4 data-en="Navigation" data-uk="Навігація">Navigation</h4>
+            <div class="footer-links">
+              <a href="#section-hero" class="footer-nav-link"
+                ><i class="fas fa-chevron-right"></i
+                ><span data-en="Hero" data-uk="Головна">Hero</span></a
+              ><a href="#section-features" class="footer-nav-link"
+                ><i class="fas fa-chevron-right"></i
+                ><span data-en="Features" data-uk="Можливості"
+                  >Features</span
+                ></a
+              ><a href="#section-step-by-step" class="footer-nav-link"
+                ><i class="fas fa-chevron-right"></i
+                ><span data-en="Step by Step" data-uk="Інструкція"
+                  >Step by Step</span
+                ></a
+              ><a href="#section-quick-guide" class="footer-nav-link"
+                ><i class="fas fa-chevron-right"></i
+                ><span data-en="Guide" data-uk="Посібник">Guide</span></a
+              ><a href="#section-faq" class="footer-nav-link"
+                ><i class="fas fa-chevron-right"></i
+                ><span data-en="FAQ" data-uk="FAQ">FAQ</span></a
+              ><a href="#section-support" class="footer-nav-link"
+                ><i class="fas fa-chevron-right"></i
+                ><span data-en="Support" data-uk="Підтримка">Support</span></a
+              >
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4 data-en="Resources" data-uk="Ресурси">Resources</h4>
+            <div class="footer-links">
+              <a href="https://wordpress.org" target="_blank"
+                ><i class="fab fa-wordpress"></i> WordPress.org</a
+              ><a href="https://www.php.net" target="_blank"
+                ><i class="fab fa-php"></i> PHP.net</a
+              ><a href="https://mariadb.org" target="_blank"
+                ><i class="fas fa-database"></i> MariaDB</a
+              >
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4 data-en="Connect" data-uk="Зв'язок">Connect</h4>
+            <div class="social-links">
+              <a href="https://www.facebook.com/OvcharovCoder" target="_blank"
+                ><i class="fab fa-facebook-f"></i></a
+              ><a
+                href="https://www.linkedin.com/in/andrii-ovcharov-1ba081141/"
+                target="_blank"
+                ><i class="fab fa-linkedin-in"></i></a
+              ><a href="https://t.me/OvcharovCoder" target="_blank"
+                ><i class="fab fa-telegram-plane"></i
+              ></a>
+            </div>
+            <div class="footer-links" style="margin-top: 0.5rem">
+              <a href="mailto:ovcharovcoder@gmail.com"
+                ><i class="fas fa-envelope"></i> ovcharovcoder@gmail.com</a
+              >
+            </div>
+          </div>
         </div>
-        <div class="license-text">
-          <i class="fab fa-open-source"></i> Distributed under the MIT License
+        <div class="footer-bottom">
+          <div class="footer-bottom-links">
+            <a href="#" id="footerSupportLinkBottom" style="color: #ff3b30"
+              ><i class="fas fa-heart"></i
+              ><span data-en=" Support the project" data-uk=" Підтримати проєкт"
+                >Support the project</span
+              ></a
+            >
+          </div>
+          <div
+            class="footer-name-explanation"
+            style="font-size: 0.7rem; opacity: 0.6"
+          >
+            <span
+              data-en="W (Web/WordPress) + Pronto (fast) = WPronto → fast local server"
+              data-uk="W (Web/WordPress) + Pronto (швидко) = WPronto → швидкий локальний сервер"
+              >W (Web/WordPress) + Pronto (fast) = WPronto → fast local
+              server</span
+            >
+          </div>
+          <div>
+            © 2026
+            <a
+              href="https://www.facebook.com/OvcharovCoder"
+              target="_blank"
+              style="
+                color: inherit;
+                text-decoration: none;
+                border-bottom: 1px dotted currentColor;
+              "
+              >Andrii Ovcharov</a
+            >.
+            <span data-en="All rights reserved." data-uk="Всі права захищено."
+              >All rights reserved.</span
+            >
+          </div>
+          <div class="license-text">
+            <i class="fab fa-open-source"></i> Distributed under the MIT License
+          </div>
         </div>
       </div>
     </footer>
