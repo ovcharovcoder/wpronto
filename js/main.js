@@ -32,6 +32,125 @@ if (themeBtn) {
   if (localStorage.getItem('theme') === 'dark') updateTheme(true);
 }
 
+// ========== SIDENAV (CODE MAP) NAVIGATION ==========
+const sections = [
+  { id: 'section-hero', labelEn: 'Hero', labelUk: 'Головна' },
+  { id: 'section-system-reqs', labelEn: 'Requirements', labelUk: 'Вимоги' },
+  { id: 'section-tech-stack', labelEn: 'Tech Stack', labelUk: 'Технології' },
+  { id: 'section-features', labelEn: 'Features', labelUk: 'Можливості' },
+  { id: 'section-how-it-works', labelEn: 'Get Started', labelUk: 'Розпочати' },
+  {
+    id: 'section-step-by-step',
+    labelEn: 'Step by Step',
+    labelUk: 'Інструкція',
+  },
+  { id: 'section-quick-guide', labelEn: 'Guide', labelUk: 'Посібник' },
+  { id: 'section-pro-tips', labelEn: 'Pro Tips', labelUk: 'Поради' },
+  { id: 'section-faq', labelEn: 'FAQ', labelUk: 'FAQ' },
+  { id: 'section-download-cta', labelEn: 'Download', labelUk: 'Завантажити' },
+  { id: 'section-support', labelEn: 'Support', labelUk: 'Підтримка' },
+  { id: 'section-footer', labelEn: 'Footer', labelUk: 'Footer' },
+];
+
+function buildDesktopNav() {
+  const container = document.getElementById('sectionNav');
+  if (!container) return;
+  container.innerHTML = '';
+  sections.forEach(section => {
+    const el = document.getElementById(section.id);
+    if (!el) return;
+    const item = document.createElement('a');
+    item.href = `#${section.id}`;
+    item.className = 'nav-dot-item';
+    item.setAttribute('data-id', section.id);
+    // Використовуємо поточну мову для початкового тексту
+    const initialLabel =
+      currentLang === 'en' ? section.labelEn : section.labelUk;
+    item.innerHTML = `<div class="nav-dot"></div><span class="nav-label" data-label-en="${section.labelEn}" data-label-uk="${section.labelUk}">${initialLabel}</span>`;
+    item.addEventListener('click', e => {
+      e.preventDefault();
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    container.appendChild(item);
+  });
+}
+
+function buildMobileNav() {
+  const container = document.getElementById('mobileNavItems');
+  if (!container) return;
+  container.innerHTML = '';
+  sections.forEach(section => {
+    const el = document.getElementById(section.id);
+    if (!el) return;
+    const item = document.createElement('a');
+    item.href = `#${section.id}`;
+    item.className = 'mobile-nav-item';
+    item.setAttribute('data-id', section.id);
+    const initialLabel =
+      currentLang === 'en' ? section.labelEn : section.labelUk;
+    item.innerHTML = `<div class="mobile-nav-dot"></div><span class="mobile-nav-label" data-label-en="${section.labelEn}" data-label-uk="${section.labelUk}">${initialLabel}</span>`;
+    item.addEventListener('click', e => {
+      e.preventDefault();
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      closeMobileMenu();
+    });
+    container.appendChild(item);
+  });
+}
+
+function updateNavLabels() {
+  const lang = currentLang; // Використовуємо currentLang замість window.currentLang
+  document.querySelectorAll('.nav-label').forEach(label => {
+    const en = label.getAttribute('data-label-en');
+    const uk = label.getAttribute('data-label-uk');
+    if (en && uk) {
+      label.textContent = lang === 'en' ? en : uk;
+    }
+  });
+  document.querySelectorAll('.mobile-nav-label').forEach(label => {
+    const en = label.getAttribute('data-label-en');
+    const uk = label.getAttribute('data-label-uk');
+    if (en && uk) {
+      label.textContent = lang === 'en' ? en : uk;
+    }
+  });
+}
+
+function updateActiveSection() {
+  const scrollPos = window.scrollY + 150;
+  let activeId = null;
+  for (const s of sections) {
+    const el = document.getElementById(s.id);
+    if (
+      el &&
+      scrollPos >= el.offsetTop &&
+      scrollPos < el.offsetTop + el.offsetHeight
+    ) {
+      activeId = s.id;
+      break;
+    }
+  }
+  document.querySelectorAll('.nav-dot-item, .mobile-nav-item').forEach(item => {
+    if (item.getAttribute('data-id') === activeId) {
+      item.classList.add('active');
+    } else {
+      item.classList.remove('active');
+    }
+  });
+}
+
+function closeMobileMenu() {
+  document.getElementById('mobileNavOverlay')?.classList.remove('active');
+  document.getElementById('mobileNavPanel')?.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function openMobileMenu() {
+  document.getElementById('mobileNavOverlay')?.classList.add('active');
+  document.getElementById('mobileNavPanel')?.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
 // ========== LANGUAGE TOGGLE ==========
 function updateLanguage(lang) {
   currentLang = lang;
@@ -81,6 +200,9 @@ function updateLanguage(lang) {
       .forEach(el => (el.style.display = 'inline'));
   }
 
+  // ОНОВЛЮЄМО МІТКИ НАВІГАЦІЇ (це ключовий момент!)
+  updateNavLabels();
+
   localStorage.setItem('language', lang);
 }
 
@@ -92,10 +214,6 @@ if (langToggle) {
     updateLanguage(newLang);
   });
 }
-
-// Завантажуємо збережену мову
-const savedLang = localStorage.getItem('language');
-updateLanguage(savedLang === 'uk' ? 'uk' : 'en');
 
 // ========== FAQ (акордеон) ==========
 document.querySelectorAll('.faq-question').forEach(btn => {
@@ -144,7 +262,6 @@ document.addEventListener('keydown', e => {
 });
 
 // ========== SCROLL TO DONATE SECTION ==========
-// Скрол до секції донатів через якір
 (function () {
   const footerSupportLink = document.getElementById('footerSupportLink');
   const supportNavBtn = document.getElementById('supportNavBtn');
@@ -162,11 +279,47 @@ document.addEventListener('keydown', e => {
 
   if (supportNavBtn) {
     supportNavBtn.addEventListener('click', scrollToDonate);
-    console.log('Support button initialized');
   }
 
   if (footerSupportLink) {
     footerSupportLink.addEventListener('click', scrollToDonate);
-    console.log('Footer support link initialized');
   }
 })();
+
+// ========== ІНІЦІАЛІЗАЦІЯ ==========
+// Спочатку завантажуємо збережену мову
+const savedLang = localStorage.getItem('language');
+currentLang = savedLang === 'uk' ? 'uk' : 'en';
+
+// Будуємо навігацію з правильною мовою
+buildDesktopNav();
+buildMobileNav();
+
+// Потім оновлюємо всі тексти (включаючи навігацію)
+updateLanguage(currentLang);
+
+// Налаштовуємо відстеження скролу
+window.addEventListener('scroll', updateActiveSection);
+window.addEventListener('resize', updateActiveSection);
+updateActiveSection();
+
+// Мобільне меню
+document
+  .getElementById('mobileNavBtn')
+  ?.addEventListener('click', openMobileMenu);
+document
+  .getElementById('mobileNavClose')
+  ?.addEventListener('click', closeMobileMenu);
+document
+  .getElementById('mobileNavOverlay')
+  ?.addEventListener('click', closeMobileMenu);
+
+// Додатковий обробник для підтримки лінка в футері
+document
+  .getElementById('footerSupportLinkBottom')
+  ?.addEventListener('click', e => {
+    e.preventDefault();
+    document
+      .getElementById('donateAnchor')
+      ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
