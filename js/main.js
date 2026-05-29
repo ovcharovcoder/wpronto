@@ -35,16 +35,25 @@ if (themeBtn) {
 // ========== SIDENAV (CODE MAP) NAVIGATION ==========
 const sections = [
   { id: 'section-hero', labelEn: 'Hero', labelUk: 'Головна' },
+  {
+    id: 'section-hero-features',
+    labelEn: 'Features',
+    labelUk: 'Переваги',
+  },
   { id: 'section-system-reqs', labelEn: 'Requirements', labelUk: 'Вимоги' },
   { id: 'section-tech-stack', labelEn: 'Tech Stack', labelUk: 'Технології' },
-  { id: 'section-features', labelEn: 'Features', labelUk: 'Можливості' },
+  { id: 'section-features', labelEn: 'Opportunities', labelUk: 'Можливості' },
   { id: 'section-how-it-works', labelEn: 'Get Started', labelUk: 'Розпочати' },
   {
     id: 'section-step-by-step',
     labelEn: 'Step by Step',
     labelUk: 'Інструкція',
   },
-  { id: 'section-quick-guide', labelEn: 'Guide', labelUk: 'Посібник' },
+  {
+    id: 'section-quick-guide',
+    labelEn: 'Quick Guide',
+    labelUk: 'Посібник',
+  },
   { id: 'section-pro-tips', labelEn: 'Pro Tips', labelUk: 'Поради' },
   { id: 'section-faq', labelEn: 'FAQ', labelUk: 'FAQ' },
   { id: 'section-download-cta', labelEn: 'Download', labelUk: 'Завантажити' },
