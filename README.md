@@ -41,7 +41,7 @@ This allows developers to create and manage WordPress websites locally without e
 |---|---|
 | **WordPress** | `7.0` |
 | **PHP** | `8.3/8.5` |
-| **Nginx** | `1.30.0` |
+| **Nginx** | `1.30.2` |
 | **phpMyAdmin** | `5.2.3` |
 | **MySQL (MariaDB)** | `11.4.2` |
 
