@@ -125,20 +125,41 @@ function updateNavLabels() {
   });
 }
 
+// ========== ОНОВЛЕНА ФУНКЦІЯ ДЛЯ ВІДСТЕЖЕННЯ АКТИВНОГО РОЗДІЛУ ==========
+// Тепер підсвічування відбувається, коли секція на відстані 80px від верху
 function updateActiveSection() {
-  const scrollPos = window.scrollY + 150;
+  // Збільшуємо поріг до 250px, щоб секція підсвічувалася раніше (не доїжджаючи до верху)
+  const scrollPos = window.scrollY + 250;
   let activeId = null;
+
   for (const s of sections) {
     const el = document.getElementById(s.id);
-    if (
-      el &&
-      scrollPos >= el.offsetTop &&
-      scrollPos < el.offsetTop + el.offsetHeight
-    ) {
-      activeId = s.id;
-      break;
+    if (el) {
+      const offsetTop = el.offsetTop;
+      const offsetBottom = offsetTop + el.offsetHeight;
+
+      // Секція вважається активною, коли її верхня межа досягла scrollPos
+      // І при цьому ми ще не вийшли за її межі
+      if (scrollPos >= offsetTop && scrollPos < offsetBottom) {
+        activeId = s.id;
+        break;
+      }
     }
   }
+
+  // Якщо жодна секція не знайдена і ми внизу сторінки — активуємо останню
+  if (!activeId && sections.length > 0) {
+    const lastSection = document.getElementById(
+      sections[sections.length - 1].id,
+    );
+    if (
+      lastSection &&
+      window.scrollY + window.innerHeight >= document.body.scrollHeight - 50
+    ) {
+      activeId = sections[sections.length - 1].id;
+    }
+  }
+
   document.querySelectorAll('.nav-dot-item, .mobile-nav-item').forEach(item => {
     if (item.getAttribute('data-id') === activeId) {
       item.classList.add('active');
