@@ -1,6 +1,18 @@
 // ========== Глобальні змінні ==========
 let currentLang = 'en';
 
+// ========== ДОПОМІЖНА ФУНКЦІЯ ДЛЯ ПЛАВНОГО СКРОЛУ З ВІДСТУПОМ ==========
+function scrollToSectionWithOffset(element, offset = 80) {
+  if (!element) return;
+  const elementPosition = element.getBoundingClientRect().top;
+  const offsetPosition = elementPosition + window.scrollY - offset;
+
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: 'smooth',
+  });
+}
+
 // ========== THEME TOGGLE ==========
 const themeBtn = document.getElementById('themeToggle');
 if (themeBtn) {
@@ -72,13 +84,12 @@ function buildDesktopNav() {
     item.href = `#${section.id}`;
     item.className = 'nav-dot-item';
     item.setAttribute('data-id', section.id);
-    // Використовуємо поточну мову для початкового тексту
     const initialLabel =
       currentLang === 'en' ? section.labelEn : section.labelUk;
     item.innerHTML = `<div class="nav-dot"></div><span class="nav-label" data-label-en="${section.labelEn}" data-label-uk="${section.labelUk}">${initialLabel}</span>`;
     item.addEventListener('click', e => {
       e.preventDefault();
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      scrollToSectionWithOffset(el, 100); // Відступ 100px від верху
     });
     container.appendChild(item);
   });
@@ -100,7 +111,7 @@ function buildMobileNav() {
     item.innerHTML = `<div class="mobile-nav-dot"></div><span class="mobile-nav-label" data-label-en="${section.labelEn}" data-label-uk="${section.labelUk}">${initialLabel}</span>`;
     item.addEventListener('click', e => {
       e.preventDefault();
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      scrollToSectionWithOffset(el, 80); // Відступ 80px від верху
       closeMobileMenu();
     });
     container.appendChild(item);
@@ -108,7 +119,7 @@ function buildMobileNav() {
 }
 
 function updateNavLabels() {
-  const lang = currentLang; // Використовуємо currentLang замість window.currentLang
+  const lang = currentLang;
   document.querySelectorAll('.nav-label').forEach(label => {
     const en = label.getAttribute('data-label-en');
     const uk = label.getAttribute('data-label-uk');
@@ -125,10 +136,9 @@ function updateNavLabels() {
   });
 }
 
-// ========== ОНОВЛЕНА ФУНКЦІЯ ДЛЯ ВІДСТЕЖЕННЯ АКТИВНОГО РОЗДІЛУ ==========
-// Тепер підсвічування відбувається, коли секція на відстані 80px від верху
+// ========== ФУНКЦІЯ ДЛЯ ВІДСТЕЖЕННЯ АКТИВНОГО РОЗДІЛУ ==========
+// Залишаємо як було добре - з порогом 250px
 function updateActiveSection() {
-  // Збільшуємо поріг до 250px, щоб секція підсвічувалася раніше (не доїжджаючи до верху)
   const scrollPos = window.scrollY + 250;
   let activeId = null;
 
@@ -138,8 +148,6 @@ function updateActiveSection() {
       const offsetTop = el.offsetTop;
       const offsetBottom = offsetTop + el.offsetHeight;
 
-      // Секція вважається активною, коли її верхня межа досягла scrollPos
-      // І при цьому ми ще не вийшли за її межі
       if (scrollPos >= offsetTop && scrollPos < offsetBottom) {
         activeId = s.id;
         break;
@@ -147,7 +155,6 @@ function updateActiveSection() {
     }
   }
 
-  // Якщо жодна секція не знайдена і ми внизу сторінки — активуємо останню
   if (!activeId && sections.length > 0) {
     const lastSection = document.getElementById(
       sections[sections.length - 1].id,
@@ -185,7 +192,6 @@ function openMobileMenu() {
 function updateLanguage(lang) {
   currentLang = lang;
 
-  // Оновлюємо всі елементи з data-en/data-uk
   document.querySelectorAll('[data-en]').forEach(el => {
     const text = el.getAttribute(`data-${lang}`);
     if (text) {
@@ -193,7 +199,6 @@ function updateLanguage(lang) {
     }
   });
 
-  // Оновлюємо текст кнопки теми
   const themeSpan = document.querySelector('#themeToggle span');
   if (themeSpan) {
     const isDark = document.body.classList.contains('dark');
@@ -207,13 +212,11 @@ function updateLanguage(lang) {
           : 'Темна тема';
   }
 
-  // Оновлюємо текст кнопки мови
   const langBtnSpan = document.querySelector('#langToggle span');
   if (langBtnSpan) {
     langBtnSpan.textContent = lang === 'en' ? 'Українська' : 'English';
   }
 
-  // Оновлюємо Pro Tips (окремі блоки .tip-text-en/.tip-text-uk)
   if (lang === 'en') {
     document
       .querySelectorAll('.tip-text-en')
@@ -230,13 +233,10 @@ function updateLanguage(lang) {
       .forEach(el => (el.style.display = 'inline'));
   }
 
-  // ОНОВЛЮЄМО МІТКИ НАВІГАЦІЇ (це ключовий момент!)
   updateNavLabels();
-
   localStorage.setItem('language', lang);
 }
 
-// Ініціалізація кнопки мови
 const langToggle = document.getElementById('langToggle');
 if (langToggle) {
   langToggle.addEventListener('click', () => {
@@ -251,11 +251,9 @@ document.querySelectorAll('.faq-question').forEach(btn => {
     const item = this.closest('.faq-item');
     const isActive = item.classList.contains('active');
 
-    // Закриваємо всі інші
     document
       .querySelectorAll('.faq-item')
       .forEach(i => i.classList.remove('active'));
-    // Відкриваємо поточний, якщо він був закритий
     if (!isActive) item.classList.add('active');
   });
 });
@@ -284,7 +282,6 @@ if (donateBtn) donateBtn.addEventListener('click', openModal);
 if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
 if (modalOverlay) modalOverlay.addEventListener('click', closeModal);
 
-// Закриття по Escape
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape' && donateModal?.classList.contains('active')) {
     closeModal();
@@ -300,10 +297,7 @@ document.addEventListener('keydown', e => {
   function scrollToDonate(e) {
     e.preventDefault();
     if (donateAnchor) {
-      donateAnchor.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
+      scrollToSectionWithOffset(donateAnchor, 80); // Відступ 80px від верху
     }
   }
 
@@ -317,23 +311,17 @@ document.addEventListener('keydown', e => {
 })();
 
 // ========== ІНІЦІАЛІЗАЦІЯ ==========
-// Спочатку завантажуємо збережену мову
 const savedLang = localStorage.getItem('language');
 currentLang = savedLang === 'uk' ? 'uk' : 'en';
 
-// Будуємо навігацію з правильною мовою
 buildDesktopNav();
 buildMobileNav();
-
-// Потім оновлюємо всі тексти (включаючи навігацію)
 updateLanguage(currentLang);
 
-// Налаштовуємо відстеження скролу
 window.addEventListener('scroll', updateActiveSection);
 window.addEventListener('resize', updateActiveSection);
 updateActiveSection();
 
-// Мобільне меню
 document
   .getElementById('mobileNavBtn')
   ?.addEventListener('click', openMobileMenu);
@@ -349,7 +337,8 @@ document
   .getElementById('footerSupportLinkBottom')
   ?.addEventListener('click', e => {
     e.preventDefault();
-    document
-      .getElementById('donateAnchor')
-      ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const donateAnchor = document.getElementById('donateAnchor');
+    if (donateAnchor) {
+      scrollToSectionWithOffset(donateAnchor, 80); // Відступ 80px від верху
+    }
   });
