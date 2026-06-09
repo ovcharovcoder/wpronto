@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WPronto — Local WordPress Development for Windows</title>
+
     <!-- FAVICON -->
     <link
       rel="icon"
@@ -22,6 +23,8 @@
       sizes="180x180"
       href="img/apple-touch-icon.png"
     />
+
+    <!-- META TAGS -->
     <meta
       name="description"
       content="WPronto — lightweight local WordPress server for Windows. Launch WP sites with one click, create backups, get phpMyAdmin and WP-CLI included."
@@ -30,6 +33,8 @@
       name="keywords"
       content="WPronto, local WordPress server, WordPress locally, local WordPress server, XAMPP alternative, OpenServer alternative, WordPress development environment, localhost WordPress, free WordPress server"
     />
+
+    <!-- FONTS & STYLES -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
@@ -45,11 +50,20 @@
   </head>
 
   <body>
+    <!-- ============================================ -->
+    <!-- BACKGROUND BLOBS                              -->
+    <!-- ============================================ -->
     <div class="blob"></div>
     <div class="blob"></div>
 
+    <!-- ============================================ -->
+    <!-- SIDE NAVIGATION (CODE MAP)                   -->
+    <!-- ============================================ -->
     <div class="section-nav" id="sectionNav"></div>
 
+    <!-- ============================================ -->
+    <!-- MOBILE BURGER MENU                           -->
+    <!-- ============================================ -->
     <button class="mobile-nav-btn" id="mobileNavBtn">
       <i class="fas fa-bars"></i>
     </button>
@@ -61,6 +75,9 @@
       <div id="mobileNavItems"></div>
     </div>
 
+    <!-- ============================================ -->
+    <!-- MAIN NAVIGATION                              -->
+    <!-- ============================================ -->
     <nav>
       <div class="container nav-content">
         <a href="https://ovcharovcoder.github.io/wpronto" class="logo">
@@ -92,7 +109,11 @@
       </div>
     </nav>
 
+    <!-- ============================================ -->
+    <!-- MAIN CONTENT                                 -->
+    <!-- ============================================ -->
     <main class="container">
+      <!-- ========== HERO SECTION ========== -->
       <section class="hero" id="section-hero">
         <div
           class="badge"
@@ -128,7 +149,7 @@
         </div>
       </section>
 
-      <!-- HERO + ROCKET + FEATURES SECTION -->
+      <!-- ========== HERO FEATURES (ROCKET + VERTICAL) ========== -->
       <section class="hero-features" id="section-hero-features">
         <div class="hero-features-grid">
           <div class="hero-rocket">
@@ -141,36 +162,36 @@
           </div>
           <div class="features-vertical">
             <div class="feature-vertical-item">
-              <i class="fas fa-gift"></i>
-              <span data-en="Completely free" data-uk="Абсолютно безкоштовний"
+              <i class="fas fa-gift"></i
+              ><span data-en="Completely free" data-uk="Абсолютно безкоштовний"
                 >Completely free</span
               >
             </div>
             <div class="feature-vertical-item">
-              <i class="fas fa-rocket"></i>
-              <span data-en="Lightweight and fast" data-uk="Легкий та швидкий"
+              <i class="fas fa-rocket"></i
+              ><span data-en="Lightweight and fast" data-uk="Легкий та швидкий"
                 >Lightweight and fast</span
               >
             </div>
             <div class="feature-vertical-item">
-              <i class="fab fa-wordpress"></i>
-              <span
+              <i class="fab fa-wordpress"></i
+              ><span
                 data-en="WordPress-focused workflow"
                 data-uk="Орієнтація на WordPress"
                 >WordPress-focused workflow</span
               >
             </div>
             <div class="feature-vertical-item">
-              <i class="fas fa-layer-group"></i>
-              <span
+              <i class="fas fa-layer-group"></i
+              ><span
                 data-en="Multiple projects support"
                 data-uk="Підтримка кількох проєктів"
                 >Multiple projects support</span
               >
             </div>
             <div class="feature-vertical-item">
-              <i class="fas fa-graduation-cap"></i>
-              <span
+              <i class="fas fa-graduation-cap"></i
+              ><span
                 data-en="Development & Learning"
                 data-uk="Розробка та навчання"
                 >Development & Learning</span
@@ -180,6 +201,7 @@
         </div>
       </section>
 
+      <!-- ========== SYSTEM REQUIREMENTS ========== -->
       <section class="system-reqs" id="section-system-reqs">
         <h2
           class="section-title"
@@ -219,6 +241,7 @@
         </div>
       </section>
 
+      <!-- ========== TECH STACK ========== -->
       <section class="tech-stack" id="section-tech-stack">
         <h2
           class="section-title"
@@ -244,6 +267,7 @@
         </div>
       </section>
 
+      <!-- ========== FEATURES GRID (9 cards) ========== -->
       <section id="section-features">
         <h2
           class="section-title"
@@ -345,7 +369,7 @@
               data-en="Сontrol the entire server without touching the mouse: start, stop, open admin, manage backups and more. Your workflow just got faster."
               data-uk="Керуйте сервером без миші: запускайте, зупиняйте, відкривайте панель адміністратора, керуйте резервними копіями та багато іншого. Ваша робота стала ще швидшою."
             >
-              Сontrol the entire server without touching the mouse: start, stop,
+              Control the entire server without touching the mouse: start, stop,
               open admin, manage backups and more. Your workflow just got
               faster.
             </p>
@@ -363,9 +387,8 @@
               data-uk="Два режими в одному інструменті. Для справжніх сайтів: повноцінний WordPress. Для швидких тестів: створіть проєкт з ім'ям <code>php</code> і одразу починайте писати код — без БД або встановлення WordPress."
             >
               Two workflows in one tool. For real sites: full WordPress setup.
-              For quick tests: just create a project named
-              <code>php</code> and start coding — no database or WordPress
-              installation needed.
+              For quick tests: just create a project named <code>php</code> and
+              start coding — no database or WordPress installation needed.
             </p>
           </div>
           <div class="feature-card">
@@ -400,6 +423,7 @@
         </div>
       </section>
 
+      <!-- ========== HOW IT WORKS (3 steps) ========== -->
       <section id="section-how-it-works">
         <h2
           class="section-title"
@@ -454,6 +478,7 @@
         </div>
       </section>
 
+      <!-- ========== STEP-BY-STEP DETAILED GUIDE (13 steps) ========== -->
       <section id="section-step-by-step">
         <h2
           class="section-title"
@@ -636,8 +661,8 @@
                 Select a site and click <strong>"Backup"</strong> (or
                 <strong>Ctrl+Shift+B</strong>) to create a full backup (files +
                 database). Don't be lazy to create copies of your projects,
-                because they help fight errors and also save time and nerves.<br />
-                Backups are saved to:
+                because they help fight errors and also save time and nerves.<br />Backups
+                are saved to:
                 <code>WPronto/backups/your-site/YYYY-MM-DD_HH-MM-SS/</code>
               </p>
             </div>
@@ -648,7 +673,7 @@
               <img
                 class="steps_img_large"
                 src="img/step7.webp"
-                alt="Backup site"
+                alt="Restore from backup"
                 loading="lazy"
               />
             </div>
@@ -660,12 +685,8 @@
                 Step 7 — Restore from backup
               </h2>
               <p
-                data-en='To restore a site from a backup, select the site and click the <strong>"Restore"</strong> button (or
-                <strong>Ctrl+Shift+R</strong>). WPronto will automatically recreate the site, restore all files and the database.'
-                data-uk='
-                Щоб відновити сайт з бекапу, оберіть сайт та натисніть <strong>"Restore"</strong> (або
-                <strong>Ctrl+Shift+R</strong>). 
-                WPronto автоматично перестворить сайт, відновить усі файли та базу даних.'
+                data-en='To restore a site from a backup, select the site and click the <strong>"Restore"</strong> button (or <strong>Ctrl+Shift+R</strong>). WPronto will automatically recreate the site, restore all files and the database.'
+                data-uk='Щоб відновити сайт з бекапу, оберіть сайт та натисніть <strong>"Restore"</strong> (або <strong>Ctrl+Shift+R</strong>). WPronto автоматично перестворить сайт, відновить усі файли та базу даних.'
               >
                 To restore a site from a backup, select the site and click the
                 <strong>"Restore"</strong> button (or
@@ -692,10 +713,8 @@
                 Step 8 — Remove unused projects
               </h2>
               <p
-                data-en='Delete unnecessary projects with a single <strong>"Delete"</strong> button (or
-                <strong>Ctrl+Shift+D</strong>). This removes all files and the database. <strong><br>Please be careful</strong> and do not delete a project that is important to you!'
-                data-uk='Видаліть зайві проєкти однією кнопкою <strong>"Delete"</strong> (або
-                <strong>Ctrl+Shift+D</strong>). Це видаляє всі файли та базу даних. <strong><br>Будьте обережні</strong> та випадково не видаліть важливий проєкт!'
+                data-en='Delete unnecessary projects with a single <strong>"Delete"</strong> button (or <strong>Ctrl+Shift+D</strong>). This removes all files and the database. <strong><br>Please be careful</strong> and do not delete a project that is important to you!'
+                data-uk='Видаліть зайві проєкти однією кнопкою <strong>"Delete"</strong> (або <strong>Ctrl+Shift+D</strong>). Це видаляє всі файли та базу даних. <strong><br>Будьте обережні</strong> та випадково не видаліть важливий проєкт!'
               >
                 Delete unnecessary projects with a single
                 <strong>"Delete"</strong> button (or
@@ -722,10 +741,8 @@
                 Step 9 — Stop the environment anytime
               </h2>
               <p
-                data-en='Press <strong>"Stop"</strong> (or
-                <strong>Ctrl+Shift+X</strong>) to stop the local server. Your projects, databases and settings remain saved between sessions.'
-                data-uk='Натисніть <strong>"Stop"</strong> (або
-                <strong>Ctrl+Shift+X</strong>), щоб зупинити локальний сервер. Ваші проєкти, бази даних та налаштування залишаються збереженими між сесіями.'
+                data-en='Press <strong>"Stop"</strong> (or <strong>Ctrl+Shift+X</strong>) to stop the local server. Your projects, databases and settings remain saved between sessions.'
+                data-uk='Натисніть <strong>"Stop"</strong> (або <strong>Ctrl+Shift+X</strong>), щоб зупинити локальний сервер. Ваші проєкти, бази даних та налаштування залишаються збереженими між сесіями.'
               >
                 Press <strong>"Stop"</strong> (or <strong>Ctrl+Shift+X</strong>)
                 to pause the local server. Your projects, databases and settings
@@ -755,8 +772,8 @@
                 data-uk="Ліва панель відображає всі ваші проєкти. Виберіть будь-який проєкт, щоб відкрити його адмін-панель, створити бекап, відновити або видалити його.<br> Права панель показує журнал операцій сервера."
               >
                 The left panel displays all your projects. Select any project to
-                open its admin panel, create a backup, restore, or delete it.<br />
-                The right panel shows the server's transaction log.
+                open its admin panel, create a backup, restore, or delete it.<br />The
+                right panel shows the server's transaction log.
               </p>
             </div>
           </div>
@@ -766,7 +783,7 @@
               <img
                 class="steps_img_large"
                 src="img/step11.webp"
-                alt="About WPronto"
+                alt="PHP version"
                 loading="lazy"
               />
             </div>
@@ -852,6 +869,7 @@
         </div>
       </section>
 
+      <!-- ========== QUICK GUIDE (6 cards) ========== -->
       <section class="quick-guide" id="section-quick-guide">
         <h2
           class="section-title"
@@ -919,9 +937,8 @@
               >
                 Select the desired site on the left panel
               </li>
-
               <li
-                data-en="Start the server with the <strong>Start</strong> button"
+                data-en="Click the <strong>Open Admin</strong> button"
                 data-uk="Натисніть кнопку <strong>Open Admin</strong>"
               >
                 Click the <strong>Open Admin</strong> button
@@ -1121,6 +1138,7 @@
         </div>
       </section>
 
+      <!-- ========== PRO TIPS (5 tips) ========== -->
       <section class="pro-tips" id="section-pro-tips">
         <h2 class="section-title" data-en="Pro tips" data-uk="Корисні поради">
           Pro tips
@@ -1198,6 +1216,7 @@
         </div>
       </section>
 
+      <!-- ========== FAQ (10 questions) ========== -->
       <section class="faq" id="section-faq">
         <h2
           class="section-title"
@@ -1414,6 +1433,7 @@ error_reporting(E_ALL);
         </div>
       </section>
 
+      <!-- ========== DOWNLOAD CTA SECTION ========== -->
       <section class="download-cta-section" id="section-download-cta">
         <div class="download-cta-container">
           <div class="download-cta-image">
@@ -1461,8 +1481,8 @@ error_reporting(E_ALL);
                 <span
                   data-en="If you couldn't download, download the file from"
                   data-uk="Якщо у вас не вийшло завантажити, то завантажте файл з"
-                ></span>
-                <a
+                ></span
+                ><a
                   href="https://drive.google.com/uc?export=download&id=1GRHWUa2u5F0MOBUm3wKzumhsytAiLhOG"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -1471,21 +1491,21 @@ error_reporting(E_ALL);
                     text-decoration: underline;
                     font-weight: 500;
                   "
+                  >Google Drive</a
                 >
-                  Google Drive
-                </a>
               </p>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- DONATE ANCHOR -->
       <span
         id="donateAnchor"
         style="position: relative; top: -80px; display: block"
       ></span>
 
-      <!-- SUPPORT SECTION (VISIBLE) - for navigation menu -->
+      <!-- ========== SUPPORT SECTION ========== -->
       <section class="donate-section" id="section-support">
         <div class="donate-card">
           <div class="donate-icon"><i class="fas fa-heart"></i></div>
@@ -1509,7 +1529,7 @@ error_reporting(E_ALL);
         </div>
       </section>
 
-      <!-- POPUP MODAL -->
+      <!-- ========== DONATE MODAL ========== -->
       <div class="donate-modal" id="donateModal">
         <div class="donate-modal-overlay"></div>
         <div class="donate-modal-container">
@@ -1519,10 +1539,7 @@ error_reporting(E_ALL);
               <img
                 src="img/author.webp"
                 alt="Andrii Ovcharov"
-                onerror="
-                  this.src =
-                    'https://placehold.co/300x300/0144a2/white?text=Andrii'
-                "
+                onerror="this.src = 'https://placehold.co/300x300/0144a2/white?text=Andrii'"
               />
             </div>
             <div class="donor-info">
@@ -1577,6 +1594,9 @@ error_reporting(E_ALL);
       </div>
     </main>
 
+    <!-- ============================================ -->
+    <!-- FOOTER                                       -->
+    <!-- ============================================ -->
     <footer class="footer-enhanced" id="section-footer">
       <div class="container">
         <div class="footer-grid">
@@ -1602,29 +1622,35 @@ error_reporting(E_ALL);
               <a href="#section-hero" class="footer-nav-link"
                 ><i class="fas fa-chevron-right"></i
                 ><span data-en="Hero" data-uk="Головна">Hero</span></a
-              ><a href="#section-features" class="footer-nav-link"
+              >
+              <a href="#section-features" class="footer-nav-link"
                 ><i class="fas fa-chevron-right"></i
                 ><span data-en="Features" data-uk="Можливості"
                   >Features</span
                 ></a
-              ><a href="#section-step-by-step" class="footer-nav-link"
+              >
+              <a href="#section-step-by-step" class="footer-nav-link"
                 ><i class="fas fa-chevron-right"></i
                 ><span data-en="Step by Step" data-uk="Інструкція"
                   >Step by Step</span
                 ></a
-              ><a href="#section-quick-guide" class="footer-nav-link"
+              >
+              <a href="#section-quick-guide" class="footer-nav-link"
                 ><i class="fas fa-chevron-right"></i
                 ><span data-en="Guide" data-uk="Посібник">Guide</span></a
-              ><a href="#section-faq" class="footer-nav-link"
+              >
+              <a href="#section-faq" class="footer-nav-link"
                 ><i class="fas fa-chevron-right"></i
                 ><span data-en="FAQ" data-uk="FAQ">FAQ</span></a
-              ><a
+              >
+              <a
                 href="https://dev.to/andriy_ovcharov_312ead391/wpronto-local-wordpress-development-environment-for-windows-2gde"
                 target="_blank"
                 class="footer-nav-link"
                 ><i class="fas fa-chevron-right"></i
                 ><span data-en="Blog" data-uk="Blog">Blog</span></a
-              ><a href="#section-support" class="footer-nav-link"
+              >
+              <a href="#section-support" class="footer-nav-link"
                 ><i class="fas fa-chevron-right"></i
                 ><span data-en="Support" data-uk="Підтримка">Support</span></a
               >
@@ -1671,12 +1697,14 @@ error_reporting(E_ALL);
               <a
                 href="https://www.facebook.com/profile.php?id=61590531870797"
                 target="_blank"
-                ><i class="fab fa-facebook-f"></i></a
-              ><a
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
                 href="https://www.linkedin.com/in/andrii-ovcharov-101a24196/"
                 target="_blank"
-                ><i class="fab fa-linkedin-in"></i></a
-              ><a href="https://t.me/+UxrG1NSqd3hkZGIy" target="_blank"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="https://t.me/+UxrG1NSqd3hkZGIy" target="_blank"
                 ><i class="fab fa-telegram-plane"></i
               ></a>
             </div>
@@ -1740,6 +1768,39 @@ error_reporting(E_ALL);
       </div>
     </footer>
 
+    <!-- ============================================ -->
+    <!-- AI ASSISTANT WIDGET                          -->
+    <!-- ============================================ -->
+    <div class="ai-assistant">
+      <div class="questions-panel" id="assistantQuestionsPanel">
+        <div class="questions-header">
+          <span><i class="fas fa-comment-dots"></i> WPronto AI</span
+          ><button class="close-questions" id="closeQuestionsPanelBtn">
+            &times;
+          </button>
+        </div>
+        <ul class="questions-list" id="assistantQuestionsList"></ul>
+      </div>
+      <div class="assistant-avatar" id="assistantAvatarBtn">
+        <i class="fas fa-user-astronaut"></i>
+      </div>
+      <div class="assistant-invite" id="assistantInviteText">
+        У вас є запитання до мене?
+      </div>
+    </div>
+
+    <!-- ========== ANSWER PANEL ========== -->
+    <div class="answer-panel" id="assistantAnswerPanel">
+      <div class="answer-content">
+        <button class="answer-close" id="closeAnswerPanelBtn">&times;</button>
+        <div class="answer-title" id="assistantAnswerTitle"></div>
+        <div class="answer-text" id="assistantAnswerText"></div>
+      </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- SCRIPTS                                      -->
+    <!-- ============================================ -->
     <script src="js/main.js"></script>
   </body>
 </html>
