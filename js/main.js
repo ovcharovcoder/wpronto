@@ -37,6 +37,11 @@ const sections = [
   { id: 'section-pro-tips', labelEn: 'Pro Tips', labelUk: 'Поради' },
   { id: 'section-faq', labelEn: 'FAQ', labelUk: 'FAQ' },
   { id: 'section-download-cta', labelEn: 'Download', labelUk: 'Завантажити' },
+  {
+    id: 'section-starter-themes',
+    labelEn: 'Start hemes',
+    labelUk: 'Стартові теми',
+  },
   { id: 'section-support', labelEn: 'Donate', labelUk: 'Підтримати' },
   { id: 'section-footer', labelEn: 'Footer', labelUk: 'Footer' },
 ];
