@@ -2047,6 +2047,10 @@ h1 {
   visibility: visible;
 }
 
+.contact {
+  padding-top: 30px;
+}
+
 /* ========================================
    RESPONSIVE MEDIA QUERIES
    ======================================== */
