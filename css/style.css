@@ -25,6 +25,14 @@
   --warning-dark: #f87171;
   --success: #10b981;
 
+  /* Кольори для тем */
+  --theme-classic-bg: #e3f2fd;
+  --theme-classic-text: #1976d2;
+  --theme-block-bg: #e8f5e9;
+  --theme-block-text: #2e7d32;
+  --theme-download: #10986b;
+  --theme-download-dark: #0d7a55;
+
   /* Розміри */
   --container-max: 80rem;
   --nav-height: 5rem;
@@ -62,6 +70,10 @@
   --orange-glow: rgba(254, 107, 1, 0.2);
   --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #fe6b01 100%);
   --nav-bg: rgba(3, 7, 18, 0.85);
+  --theme-classic-bg: rgba(25, 118, 210, 0.2);
+  --theme-classic-text: #60a5fa;
+  --theme-block-bg: rgba(46, 125, 50, 0.2);
+  --theme-block-text: #4ade80;
 }
 
 /* ========================================
@@ -473,7 +485,8 @@ h1 {
    BUTTONS
    ======================================== */
 
-.btn {
+.btn,
+.theme-download-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -486,14 +499,16 @@ h1 {
   font-size: 1rem;
 }
 
-.btn-primary {
+.btn-primary,
+.theme-download-btn {
   background: var(--primary);
   color: white;
   box-shadow: 0 0.75rem 1.25rem -0.625rem rgba(1, 68, 162, 0.4);
   border: none;
 }
 
-.btn-primary:hover {
+.btn-primary:hover,
+.theme-download-btn:hover {
   transform: translateY(-0.25rem);
   box-shadow: 0 1.375rem 1.875rem -0.75rem rgba(254, 107, 1, 0.45);
 }
@@ -2052,6 +2067,124 @@ h1 {
 }
 
 /* ========================================
+   STARTER THEMES SECTION
+   ======================================== */
+
+.starter-themes {
+  margin: 4rem 0;
+}
+
+.themes-description {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  font-size: 1.1rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.themes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.theme-card {
+  background: var(--card);
+  border-radius: var(--radius-xl);
+  padding: 1.8rem;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.theme-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border-color: var(--accent);
+}
+
+.theme-icon {
+  font-size: 3rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.theme-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.theme-badge {
+  margin-bottom: 1rem;
+}
+
+.badge-classic,
+.badge-block {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge-classic {
+  background: var(--theme-classic-bg);
+  color: var(--theme-classic-text);
+}
+
+.badge-block {
+  background: var(--theme-block-bg);
+  color: var(--theme-block-text);
+}
+
+.theme-desc {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  color: var(--muted);
+}
+
+.theme-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.theme-tech span {
+  background: var(--border);
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  color: var(--text);
+}
+
+.theme-links {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.themes-note {
+  background: var(--border);
+  border-radius: 16px;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 2rem;
+}
+
+.themes-note i {
+  color: #f5b042;
+  margin-right: 0.5rem;
+}
+
+/* ========================================
    RESPONSIVE MEDIA QUERIES
    ======================================== */
 
@@ -2417,6 +2550,30 @@ h1 {
     padding: 0.75rem 1rem;
   }
 
+  /* Starter Themes mobile */
+  .themes-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .theme-card {
+    padding: 1.5rem;
+  }
+
+  .theme-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .themes-description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .themes-note {
+    padding: 0.875rem 1rem;
+    font-size: 0.85rem;
+  }
+
   /* AI Assistant mobile */
   .ai-assistant {
     right: 16px;
@@ -2541,9 +2698,10 @@ h1 {
   .mobile-nav-btn {
     display: flex;
   }
-   
-.contact {
-  padding-top: 0;
+
+  .contact {
+    padding-top: 0;
+  }
 }
 
 @media (max-width: 480px) {
@@ -2646,6 +2804,33 @@ h1 {
 
   .answer-text {
     font-size: 13px;
+  }
+
+  /* Starter Themes extra small */
+  .theme-card {
+    padding: 1.25rem;
+  }
+
+  .theme-icon {
+    font-size: 2.5rem;
+  }
+
+  .theme-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .theme-tech span {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.6rem;
+  }
+
+  .theme-download-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .themes-note {
+    font-size: 0.8rem;
   }
 }
 
