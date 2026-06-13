@@ -2541,6 +2541,9 @@ h1 {
   .mobile-nav-btn {
     display: flex;
   }
+   
+.contact {
+  padding-top: 0;
 }
 
 @media (max-width: 480px) {
