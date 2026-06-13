@@ -39,7 +39,7 @@ const sections = [
   { id: 'section-download-cta', labelEn: 'Download', labelUk: 'Завантажити' },
   {
     id: 'section-starter-themes',
-    labelEn: 'Start hemes',
+    labelEn: 'Start themes',
     labelUk: 'Стартові теми',
   },
   { id: 'section-support', labelEn: 'Donate', labelUk: 'Підтримати' },
