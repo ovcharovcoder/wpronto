@@ -2695,6 +2695,7 @@ h1 {
   /* Mobile menu show */
   .mobile-nav-btn {
     display: flex;
+    right: 10px;
   }
 
   .contact {
