@@ -2590,9 +2590,7 @@ h1 {
   }
 
   .assistant-invite {
-    font-size: 10px;
-    padding: 4px 12px;
-    white-space: nowrap;
+    display: none;
   }
 
   /* Панель запитань на мобільних - виїжджає ЗЛІВА */
