@@ -433,9 +433,7 @@ document.addEventListener('keydown', e => {
   function updateInviteText() {
     if (elements.inviteText) {
       elements.inviteText.textContent =
-        assistantLang === 'uk'
-          ? 'У вас є запитання до мене?'
-          : 'Do you have a question for me?';
+        assistantLang === 'uk' ? 'Питання є?' : 'Do you have a question?';
     }
   }
 
