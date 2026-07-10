@@ -102,6 +102,38 @@ body {
 }
 
 /* ========================================
+   ПЛАВНИЙ СКРОЛ ДЛЯ ЯКІРНИХ ПОСИЛАНЬ
+   ======================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Додатковий відступ для якірних посилань, щоб не перекривати навігацією */
+#share-info {
+  scroll-margin-top: 6rem;
+}
+
+/* Для всіх якірних посилань */
+[data-en] a[href^='#'] {
+  transition: color 0.3s ease;
+}
+
+[data-en] a[href^='#']:hover {
+  color: var(--accent);
+}
+
+.faq-list {
+  padding-left: 1.5rem;
+  margin: 0.5rem 0;
+  color: inherit;
+}
+
+.faq-list li {
+  list-style: none;
+}
+
+/* ========================================
    BACKGROUND BLOBS
    ======================================== */
 
@@ -994,7 +1026,7 @@ h1 {
 }
 
 /* ========================================
-   FAQ
+   FAQ (ВИПРАВЛЕНО)
    ======================================== */
 
 .faq {
@@ -1009,6 +1041,7 @@ h1 {
   margin-bottom: 1.125rem;
   background: var(--card);
   transition: all 0.25s ease;
+  overflow: hidden;
 }
 
 .faq-item:hover {
@@ -1030,6 +1063,7 @@ h1 {
   align-items: center;
   transition: color 0.2s ease;
   word-break: break-word;
+  gap: 1rem;
 }
 
 .faq-answer {
@@ -1039,7 +1073,7 @@ h1 {
 }
 
 .faq-item.active .faq-answer {
-  max-height: 187.5rem;
+  max-height: 62.5rem;
   overflow-y: auto;
 }
 
@@ -1053,16 +1087,29 @@ h1 {
 
 .faq-answer ol,
 .faq-answer ul {
-  padding: 0 var(--spacing-xl) 1.25rem 3.4375rem;
+  padding: 0 var(--spacing-xl) 1rem var(--spacing-xl);
   margin: 0;
   color: var(--muted);
   font-size: 1.05rem;
   transition: color 0.3s ease;
+  list-style-position: inside;
 }
 
-.faq-answer li {
+.faq-answer ol li,
+.faq-answer ul li {
   margin-bottom: 0.625rem;
-  line-height: 1.6;
+  line-height: 1.8;
+  padding-left: 0.5rem;
+}
+
+.faq-answer ul {
+  list-style-type: disc;
+  padding-left: calc(var(--spacing-xl) + 1.5rem);
+}
+
+.faq-answer ol {
+  list-style-type: decimal;
+  padding-left: calc(var(--spacing-xl) + 1.5rem);
 }
 
 .faq-answer strong {
@@ -1075,12 +1122,45 @@ h1 {
   transition: 0.3s;
   color: var(--primary);
   flex-shrink: 0;
-  margin-left: var(--spacing-md);
+  font-size: 1rem;
 }
 
 .faq-item.active i {
   transform: rotate(180deg);
   color: var(--accent);
+}
+
+.faq-answer code {
+  background: rgba(1, 68, 162, 0.12);
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.375rem;
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: var(--primary);
+  word-break: break-word;
+  white-space: normal;
+}
+
+.dark .faq-answer code {
+  background: rgba(254, 107, 1, 0.2);
+  color: var(--accent);
+}
+
+.faq-answer pre {
+  margin: 0.75rem var(--spacing-xl) 1.25rem var(--spacing-xl);
+  background: #1e1e1e;
+  color: #d4d4d4;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  font-family: monospace;
+  font-size: 0.8125rem;
+  border: 0.0625rem solid var(--border);
+}
+
+.dark .faq-answer pre {
+  background: #0d1117;
+  border-color: var(--border);
 }
 
 /* ========================================
@@ -1782,7 +1862,7 @@ h1 {
    AI ASSISTANT
    ======================================== */
 
- .ai-assistant {
+.ai-assistant {
   position: fixed;
   right: 20px;
   bottom: 20px;
@@ -2443,26 +2523,43 @@ h1 {
     justify-content: center;
   }
 
-  /* FAQ */
+  /* FAQ (ВИПРАВЛЕНО) */
   .faq {
     margin-bottom: 3.125rem;
+    padding: 0 0.25rem;
   }
 
   .faq-question {
-    padding: var(--spacing-md) 1.25rem;
+    padding: var(--spacing-md) 1rem;
     font-size: 0.95rem;
+    gap: 0.75rem;
   }
 
   .faq-answer p,
   .faq-answer ol,
   .faq-answer ul {
-    padding: 0 1.25rem 0.625rem 1.25rem;
+    padding: 0 1rem 0.625rem 1rem;
     font-size: 0.9rem;
   }
 
-  .faq-answer ol,
   .faq-answer ul {
-    padding-left: 2.5rem;
+    padding-left: 2rem;
+  }
+
+  .faq-answer ol {
+    padding-left: 2rem;
+  }
+
+  .faq-answer pre {
+    margin: 0.5rem 1rem 1rem 1rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  .faq-answer ol li,
+  .faq-answer ul li {
+    line-height: 1.6;
+    padding-left: 0.25rem;
   }
 
   /* Donate modal */
@@ -2805,6 +2902,43 @@ h1 {
     font-size: 13px;
   }
 
+  /* FAQ (ВИПРАВЛЕНО) */
+  .faq-question {
+    font-size: 0.85rem;
+    padding: 0.75rem 0.875rem;
+  }
+
+  .faq-answer p,
+  .faq-answer ol,
+  .faq-answer ul {
+    font-size: 0.85rem;
+    padding: 0 0.875rem 0.5rem 0.875rem;
+  }
+
+  .faq-answer ul {
+    padding-left: 1.5rem;
+  }
+
+  .faq-answer ol {
+    padding-left: 1.5rem;
+  }
+
+  .faq-answer pre {
+    margin: 0.5rem 0.875rem 0.875rem 0.875rem;
+    padding: 0.5rem;
+    font-size: 0.7rem;
+  }
+
+  .faq-item i {
+    font-size: 0.85rem;
+  }
+
+  .faq-answer ol li,
+  .faq-answer ul li {
+    line-height: 1.5;
+    padding-left: 0.125rem;
+  }
+
   /* Starter Themes extra small */
   .theme-card {
     padding: 1.25rem;
@@ -2854,5 +2988,412 @@ h1 {
 
   .modal-message {
     font-size: 0.75rem;
+  }
+}
+
+/* ========================================
+   HOTKEYS MODAL (ПОПАП-ВІКНО)
+   ======================================== */
+
+.hotkeys-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.hotkeys-modal.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.hotkeys-modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+.hotkeys-modal-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+  max-width: 720px;
+  width: 92%;
+  max-height: 85vh;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-2xl);
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  padding: 0;
+}
+
+.hotkeys-modal.active .hotkeys-modal-container {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Стилізація скролу для модального вікна */
+.hotkeys-modal-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.hotkeys-modal-container::-webkit-scrollbar-track {
+  background: var(--bg);
+  border-radius: 3px;
+}
+
+.hotkeys-modal-container::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+.hotkeys-modal-container::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+.hotkeys-modal-close {
+  position: sticky;
+  top: 12px;
+  right: 16px;
+  float: right;
+  background: var(--card);
+  border: 1px solid var(--border);
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--text);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 10;
+  margin: 12px 16px 0 0;
+}
+
+.hotkeys-modal-close:hover {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+.hotkeys-modal-header {
+  padding: 20px 32px 16px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.hotkeys-modal-header i {
+  font-size: 2.5rem;
+  color: var(--accent);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.hotkeys-modal-header h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hotkeys-modal-header p {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+.hotkeys-modal-header p strong {
+  color: var(--primary);
+}
+
+.hotkeys-modal-body {
+  padding: 20px 32px 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.hotkey-group {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 14px 16px 10px;
+  transition: all 0.2s ease;
+}
+
+.hotkey-group:hover {
+  border-color: var(--accent);
+}
+
+.hotkey-group h3 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--border);
+}
+
+.hotkey-table {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hotkey-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 4px;
+  border-radius: var(--radius-sm);
+  transition: background 0.15s ease;
+}
+
+.hotkey-row:hover {
+  background: rgba(254, 107, 1, 0.05);
+}
+
+.hotkey-keys {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  font-family: monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.hotkey-keys kbd {
+  display: inline-block;
+  padding: 1px 6px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--text);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  font-family: monospace;
+}
+
+.dark .hotkey-keys kbd {
+  background: var(--card);
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.hotkey-keys kbd + kbd {
+  margin-left: 1px;
+}
+
+.hotkey-desc {
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-weight: 500;
+  text-align: right;
+}
+
+.hotkeys-modal-footer {
+  padding: 12px 32px 20px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.hotkeys-modal-footer p {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ========================================
+   HOTKEYS TRIGGER CARD
+   ======================================== */
+.hotkeys-trigger-card p {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 1.25rem;
+  line-height: 1.5;
+}
+
+.hotkeys-open-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  box-shadow: 0 4px 12px rgba(1, 68, 162, 0.25);
+}
+
+.hotkeys-open-btn:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(254, 107, 1, 0.35);
+}
+
+.hotkeys-open-btn i {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.hotkeys-open-btn:hover i {
+  transform: translateX(4px);
+}
+
+/* ========================================
+   RESPONSIVE HOTKEYS MODAL
+   ======================================== */
+
+@media (max-width: 768px) {
+  .hotkeys-modal-body {
+    grid-template-columns: 1fr;
+    padding: 16px 20px 8px;
+    gap: 12px;
+  }
+
+  .hotkeys-modal-header {
+    padding: 16px 20px 12px;
+  }
+
+  .hotkeys-modal-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .hotkeys-modal-header p {
+    font-size: 0.85rem;
+  }
+
+  .hotkeys-modal-container {
+    max-width: 95%;
+    max-height: 90vh;
+    border-radius: var(--radius-xl);
+  }
+
+  .hotkeys-modal-close {
+    width: 34px;
+    height: 34px;
+    font-size: 20px;
+    top: 8px;
+    right: 12px;
+    margin: 8px 12px 0 0;
+  }
+
+  .hotkey-group {
+    padding: 12px 14px 8px;
+  }
+
+  .hotkey-row {
+    flex-wrap: wrap;
+    gap: 2px;
+  }
+
+  .hotkey-keys {
+    font-size: 0.65rem;
+  }
+
+  .hotkey-keys kbd {
+    padding: 1px 5px;
+    font-size: 0.6rem;
+  }
+
+  .hotkey-desc {
+    font-size: 0.75rem;
+  }
+
+  .hotkeys-modal-footer {
+    padding: 10px 20px 16px;
+  }
+
+  .hotkeys-modal-footer p {
+    font-size: 0.8rem;
+  }
+
+  .hotkeys-open-btn {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hotkeys-modal-body {
+    padding: 12px 14px 6px;
+    gap: 10px;
+  }
+
+  .hotkeys-modal-header {
+    padding: 12px 14px 10px;
+  }
+
+  .hotkeys-modal-header i {
+    font-size: 2rem;
+  }
+
+  .hotkeys-modal-header h2 {
+    font-size: 1.1rem;
+  }
+
+  .hotkeys-modal-header p {
+    font-size: 0.75rem;
+  }
+
+  .hotkey-group {
+    padding: 10px 10px 6px;
+  }
+
+  .hotkey-group h3 {
+    font-size: 0.75rem;
+  }
+
+  .hotkey-keys {
+    font-size: 0.55rem;
+  }
+
+  .hotkey-keys kbd {
+    padding: 1px 4px;
+    font-size: 0.55rem;
+  }
+
+  .hotkey-desc {
+    font-size: 0.7rem;
+  }
+
+  .hotkeys-modal-footer {
+    padding: 8px 14px 12px;
+  }
+
+  .hotkeys-modal-footer p {
+    font-size: 0.7rem;
+  }
+
+  .hotkeys-modal-close {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
   }
 }
