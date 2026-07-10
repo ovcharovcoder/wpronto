@@ -597,3 +597,58 @@ document.addEventListener('DOMContentLoaded', () => {
       if (donateAnchor) scrollToSectionWithOffset(donateAnchor, 80);
     });
 });
+
+// ============================================
+// HOTKEYS MODAL
+// ============================================
+
+(function () {
+  const modal = document.getElementById('hotkeysModal');
+  const openBtn = document.getElementById('openHotkeysBtn');
+  const closeBtn = document.getElementById('closeHotkeysBtn');
+  const overlay = modal?.querySelector('.hotkeys-modal-overlay');
+
+  if (!modal || !openBtn) return;
+
+  // Відкриття модального вікна
+  function openModal() {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  // Закриття модального вікна
+  function closeModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  // Закриття по Esc
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal();
+    }
+  });
+
+  // Відкриття по кліку на кнопку
+  openBtn.addEventListener('click', openModal);
+
+  // Закриття по кліку на хрестик
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeModal);
+  }
+
+  // Закриття по кліку на оверлей
+  if (overlay) {
+    overlay.addEventListener('click', closeModal);
+  }
+
+  // Закриття по кліку поза контейнером
+  modal.addEventListener('click', function (e) {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  // Закриття при зміні мови (якщо потрібно)
+  // можна додати закриття при зміні теми або мови
+})();
