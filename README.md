@@ -12,12 +12,9 @@
 
 | Parameter | Value |
 |---|---|
-| **Version** | `1.0` |
+| **Version** | `5.0` |
 | **Author** | Andrii Ovcharov |
-| **Release Date** | `05/17/2026` |
-| **Version** | `2.0` |
-| **Author** | Andrii Ovcharov |
-| **Release Date** | `05/27/2026` |
+| **Release Date** | `09/07/2026` |
 
 ---
 
@@ -42,6 +39,7 @@ This allows developers to create and manage WordPress websites locally without e
 | **WordPress** | `7.0` |
 | **PHP** | `8.3/8.5` |
 | **Nginx** | `1.30.2` |
+| **Ngrok** | `3.39` |
 | **phpMyAdmin** | `5.2.3` |
 | **MySQL (MariaDB)** | `11.4.2` |
 
